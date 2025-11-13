@@ -1,0 +1,46 @@
+:root {
+    --bg-color: #E9F2FF;
+    --txt-color: #132235;
+    --cur-lan: #flagEng;
+    --lan-show:none;
+    --lan-shadow:#13223526;
+    --lan-hover:#c5ccd5;
+}
+
+a {
+  text-decoration: none;
+}
+@font-face {
+  font-family: MontseBOLD;
+  src: url(Montserrat.ttf);
+}
+@font-face {
+  font-family: MontseSEMIBOLD;
+  src: url(Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: MontseREG;
+  src: url(Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: MontseITALIC;
+  src: url(Montserrat-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: MulishSEMIBOLD;
+  src: url(Mulish-SemiBold.ttf);
+}
+body {
+    background-color: var(--bg-color);
+    font-family: MontseREG;
+}
+
+/* Introduction */
+.banner img {
+  width:100%;
+  height: 345px;
+  margin-top: 60px;
+  object-fit: cover;
+  clip-path: polygon(100% 0, 100% 217.5px, 18% 343.5px, 0 217.5px, 0 0);
+  z-index: 1;
+}

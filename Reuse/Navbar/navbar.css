@@ -1,0 +1,141 @@
+.navbar {
+  width:100%;
+  height: 60px;
+  background-color: #063B7D;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position:fixed;
+  z-index: 10;
+}
+.navbar .left-side {
+  height: 30px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.navbar .flag {
+  width:30px;
+  height:18px;
+}
+.navbar .logo img{
+  width: 53.25px;
+  height:30px;
+  margin-right:39px;
+  margin-top:-5px;
+}
+.navbar .buttons a {
+  opacity: 85%;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  color: #E9F2FF;
+  font-family: MontseSEMIBOLD;
+  margin-right:30px;
+}
+
+.search {
+  width: 337.5px;
+  height:30px;
+  border:1px solid #E9F2FF;
+  border-radius: 20px;
+  color: #E9F2FF;
+  background-color: #063B7D;
+  padding-left: 15px;
+}
+.search input {
+  width:277.5px;
+  color: #E9F2FF;
+  border:none;
+  background: none;
+  margin-left: 8px;
+  outline:none;
+}
+.search input::placeholder {
+  font-family: MontseITALIC;
+  font-size:15px;
+  opacity: 0.5;
+  color: #E9F2FF;
+}
+
+.navbar .right-side {
+  width:320px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lan {
+  position: relative;
+  display: inline-block;
+  font-size:15px;
+}
+.lan img {
+  width:30px;
+  height:18px;
+}
+.lanbtn {
+  background: none;
+  color: #E9F2FF;
+  border:none;
+  cursor: pointer;
+}
+.lanbtn i{
+  width:7.5px;
+}
+.dropdown-list {
+  position: absolute;
+  z-index: 10;
+  display:var(--lan-show);
+  margin-top: 10px;
+  background-color: var(--bg-color);
+  box-shadow: 0px 8px 16px 0px var(--lan-shadow);
+  border-radius: 6px;
+  min-width: 160px;
+}
+.dropdown-list button {
+  width:100%;
+  border:none;
+  border-radius: 6px;
+  background-color: rgba(0,0,0,0);
+  text-align: left;
+}
+.dropdown-list #lanButtonTop {
+  border-radius: 6px 6px 0px 0px;
+}
+.dropdown-list #lanButtonBottom {
+  border-radius: 0px 0px 6px 6px;
+}
+.dropdown-list button:hover{
+  background-color: var(--lan-hover);
+}
+.dropdown-list span {
+  color:var(--txt-color);
+}
+.dropdown-list hr {
+  color:var(--txt-color);
+  margin:0px 0px;
+}
+.dropdown-list .flagDrop, hr {
+  display: block;
+  margin:10px 16px;
+}
+.flag {
+  margin-right: 7.5px;
+}
+#curLan {
+  margin-right:7.5px;
+}
+.right-side .line2 {
+  color: #E9F2FF;
+}
+.light-dark button{
+  border:none;
+  background-color: rgba(0,0,0,0);
+}
+.light-dark span {
+  color: #E9F2FF;
+}
+.line2 span {
+  font-weight: 100;
+  color: #E9F2FF;
+}

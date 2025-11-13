@@ -1,4 +1,4 @@
 // Load navbar
-$("#navbar").load("/Reuse/Navbar/navbar.html");
+$("#navbar").load("./Reuse/Navbar/navbar.html");
 // Load homepage
-$("#main").load("/Pages/Homepage/homepage.html");
+$("#main").load("./Pages/Homepage/homepage.html");

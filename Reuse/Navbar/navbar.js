@@ -27,9 +27,9 @@ function switchTheme(bgColor, txtColor, lanShadow, switchImg, status) {
 }
 function themeBool(l = true) {
     if (l == true) {
-        switchTheme("#E9F2FF", "#132235", "#13223526", "lightMode.png", "Light mode");
+        switchTheme("#E9F2FF", "#132235", "#13223526", "/Reuse/Navbar/lightMode.png", "Light mode");
     } else {
-        switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "darkSwitch.png", "Dark mode");
+        switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "/Reuse/Navbar/darkSwitch.png", "Dark mode");
     }
 }
 if (time.getHours() >= 6 && time.getHours() < 18) {

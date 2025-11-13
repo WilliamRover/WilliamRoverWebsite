@@ -1,12 +1,3 @@
-:root {
-    --bg-color: #E9F2FF;
-    --txt-color: #132235;
-    --cur-lan: #flagEng;
-    --lan-show:none;
-    --lan-shadow:#13223526;
-    --lan-hover:#c5ccd5;
-}
-
 a {
   text-decoration: none;
 }
@@ -34,7 +25,6 @@ body {
     background-color: var(--bg-color);
     font-family: MontseREG;
 }
-
 /* Introduction */
 .banner img {
   width:100%;

@@ -15,17 +15,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- import CSS -->
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="./Reuse/Navbar/navbar.css">
-        <link rel="stylesheet" href="./Pages/Homepage/homepage.css">
         <!-- import html  -->
-        <link rel="import" href="./Pages/Homepage/homepage.html">
-        <link rel="import" href="./Reuse/Navbar/navbar.html">
     </head>
     <body>
         <div id="navbar"></div>
-        <div id="main"></div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="index.js" async defer></script>
+        <div id="main">
+            <div class="introduction">
+                <div class="banner" id="banner">
+                    <img src="./Pages/Homepage/bannerLight.png" alt="">
+                </div>
+                <div class="info">
+                    <div class="avt"></div>
+                </div>
+                <div class="desc"></div>
+            </div>
+            <div class="midpage"></div>
+            <div class="footer"></div>
+        </div>
+        <script src="index.js" async defer type="module"></script>
     </body>
 </html>

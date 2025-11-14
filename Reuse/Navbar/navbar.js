@@ -6,16 +6,13 @@ lanbtn.onclick = function() {
     if (lanShow == false) {
         lanShow = true;
         r.style.setProperty('--lan-show', "block");
-        console.log(lanShow);
     } else {
         lanShow = false;
         r.style.setProperty('--lan-show', "none");
-        console.log(lanShow)
     }
 }
 
 // theme button 
-var time = new Date();
 var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
 function switchTheme(bgColor, txtColor, lanShadow, switchImg, status) {
@@ -26,21 +23,30 @@ function switchTheme(bgColor, txtColor, lanShadow, switchImg, status) {
     ldStatus.innerHTML = status;
 }
 function themeBool(l = true) {
-    if (l == true) {
+    if (l) {
         switchTheme("#E9F2FF", "#132235", "#13223526", "./Reuse/Navbar/lightMode.png", "Light mode");
+        // location.href='#light';
     } else {
         switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "./Reuse/Navbar/darkSwitch.png", "Dark mode");
+        // location.href='#dark';
     }
 }
-if (time.getHours() >= 6 && time.getHours() < 18) {
+
+import {checkTime} from "../../Reuse/shared.js";
+if (checkTime()) {
     var light = true
     themeBool();
-} else if (time.getHours() >= 18 || time.getHours() < 6) {
+} else if (checkTime() == false) {
     var light = false
     themeBool(false);
 }
+
 lida.onclick = function() {
     light = !light;
     themeBool(light);
-    console.log(light);
+    if (light) {
+        console.log("lights on")
+    } else {
+        console.log("lights off")
+    }
 }

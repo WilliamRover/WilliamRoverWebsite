@@ -2,25 +2,13 @@
 var lanShow = false;
 var r = document.querySelector(':root');
 var lanbtn = document.getElementById("lanbtnID");
-try {
-    lanbtn.onclick = function() {
-        if (lanShow == false) {
-            lanShow = true;
-            r.style.setProperty('--lan-show', "block");
-        } else {
-            lanShow = false;
-            r.style.setProperty('--lan-show', "none");
-        }
-    }
-} catch (error) {
-    lanbtn.onclick = function() {
-        if (lanShow == false) {
-            lanShow = true;
-            r.style.setProperty('--lan-show', "block");
-        } else {
-            lanShow = false;
-            r.style.setProperty('--lan-show', "none");
-        }
+lanbtn.onclick = function() {
+    if (lanShow == false) {
+        lanShow = true;
+        r.style.setProperty('--lan-show', "block");
+    } else {
+        lanShow = false;
+        r.style.setProperty('--lan-show', "none");
     }
 }
 

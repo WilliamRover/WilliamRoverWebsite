@@ -2,7 +2,6 @@ import {loadFile} from "./Reuse/shared.js";
 // Load navbar
 loadFile("./Reuse/Navbar/navbar.html", "navbar");
 
-
 var banner = document.getElementById("banner")
 console.stdlog = console.log.bind(console);
 console.logs = [];

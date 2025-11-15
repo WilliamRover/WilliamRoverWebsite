@@ -1,15 +1,18 @@
 // Lan button
-var lanbtn = document.getElementById("lanbtnID");
 var lanShow = false;
 var r = document.querySelector(':root');
-lanbtn.onclick = function() {
-    if (lanShow == false) {
-        lanShow = true;
-        r.style.setProperty('--lan-show', "block");
-    } else {
-        lanShow = false;
-        r.style.setProperty('--lan-show', "none");
+window.onload = function() {
+    var lanbtn = document.getElementById("lanbtnID");
+    lanbtn.onclick = function() {
+        if (lanShow == false) {
+            lanShow = true;
+            r.style.setProperty('--lan-show', "block");
+        } else {
+            lanShow = false;
+            r.style.setProperty('--lan-show', "none");
+        }
     }
+
 }
 
 // theme button 

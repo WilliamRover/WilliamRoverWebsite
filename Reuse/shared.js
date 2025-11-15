@@ -1,15 +1,24 @@
 // Load file
 export function loadFile(file, id) {
     // fetch(file).then(response => response.text()).then(html => {document.getElementById(id).innerHTML = html;});
-    var getFile = fetch(file);
-    var html = getFile.then(conversion => conversion.text());
-    html.then(html => {document.getElementById(id).innerHTML = html;})
+    fetch(file)
+        .then(response => response.text())
+        .then(html => {
+            // 1. Insert the HTML
+            document.getElementById(id).innerHTML = html;
 
-    // Run .js file
-    var script = document.createElement("script");
-    script.src = file.replace("html", "js");
-    script.type = "module";
-    document.body.appendChild(script);
+            // 2. THEN load and run the JS
+            const script = document.createElement("script");
+            script.src = file.replace("html", "js");
+            script.type = "module";
+
+            // guarantee the script runs AFTER injection
+            script.onload = () => {
+                console.log("Navbar JS loaded AFTER HTML.");
+            };
+
+            document.body.appendChild(script);
+        });
 }
 // Check time
 var time = new Date();

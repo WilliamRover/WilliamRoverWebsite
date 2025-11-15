@@ -1,8 +1,8 @@
 // Lan button
 var lanShow = false;
 var r = document.querySelector(':root');
-window.onload = function() {
-    var lanbtn = document.getElementById("lanbtnID");
+var lanbtn = document.getElementById("lanbtnID");
+try {
     lanbtn.onclick = function() {
         if (lanShow == false) {
             lanShow = true;
@@ -12,8 +12,10 @@ window.onload = function() {
             r.style.setProperty('--lan-show', "none");
         }
     }
-
+} catch (error) {
+    console.log("again")
 }
+
 
 // theme button 
 var lida = document.getElementById("LDbtn");

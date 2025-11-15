@@ -13,7 +13,15 @@ try {
         }
     }
 } catch (error) {
-    console.log("again")
+    lanbtn.onclick = function() {
+        if (lanShow == false) {
+            lanShow = true;
+            r.style.setProperty('--lan-show', "block");
+        } else {
+            lanShow = false;
+            r.style.setProperty('--lan-show', "none");
+        }
+    }
 }
 
 

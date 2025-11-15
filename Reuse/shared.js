@@ -1,9 +1,7 @@
 // Load file
 export function loadFile(file, id) {
-    // fetch(file).then(response => response.text()).then(html => {document.getElementById(id).innerHTML = html;});
-    fetch(file)
-        .then(response => response.text())
-        .then(html => {
+    // gonna be honest chatGPT write this line
+    fetch(file).then(response => response.text()).then(html => {
             // 1. Insert the HTML
             document.getElementById(id).innerHTML = html;
 

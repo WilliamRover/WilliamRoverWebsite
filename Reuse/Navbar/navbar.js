@@ -2,17 +2,21 @@
 var lanShow = false;
 var r = document.querySelector(':root');
 var lanbtn = document.getElementById("lanbtnID");
+
 lanbtn.onclick = function() {
     if (lanShow == false) {
-        lanShow = true;
         r.style.setProperty('--lan-show', "block");
     } else {
+        r.style.setProperty('--lan-show', "none");
+    }
+    lanShow = !lanShow;
+}
+document.addEventListener('click', (event => {
+    if (!lanbtn.contains(event.target)) {
         lanShow = false;
         r.style.setProperty('--lan-show', "none");
     }
-}
-
-
+}))
 // theme button 
 var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
@@ -36,15 +40,18 @@ function themeBool(l = true) {
 import {checkTime} from "../../Reuse/shared.js";
 if (checkTime()) {
     var light = true
+    r.style.setProperty('--light', light);
     themeBool();
 } else if (checkTime() == false) {
     var light = false
+    r.style.setProperty('--light', light);
     themeBool(false);
 }
 
 lida.onclick = function() {
     light = !light;
     themeBool(light);
+    r.style.setProperty('--light', light);
     if (light) {
         console.log("lights on")
     } else {

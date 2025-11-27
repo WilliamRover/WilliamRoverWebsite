@@ -8,7 +8,7 @@ export function loadFile(file, id) {
             // 2. THEN load and run the JS
             const script = document.createElement("script");
             script.src = file.replace("html", "js");
-            script.type = "module"; 
+            script.type = "module";
 
             document.body.appendChild(script);
         });

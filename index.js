@@ -3,7 +3,7 @@ import {loadFile} from "./Reuse/shared.js";
 loadFile("./Reuse/Navbar/navbar.html", "navbar");
 var banner = document.getElementById("banner")
 // Load footer
-loadFile("./Reuse/footer/footer.html", "footer");
+loadFile("./Reuse/Footer/footer.html", "footer");
 // Main
 import {checkTime} from "./Reuse/shared.js";
 if (checkTime()) {

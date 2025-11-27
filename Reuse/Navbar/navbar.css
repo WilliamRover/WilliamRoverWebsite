@@ -6,6 +6,8 @@
     --lan-shadow:#13223526;
     --lan-hover:#c5ccd5;
     --light:true;
+    --float-ld: left;
+    --ld-color:#F7C215;
 }
 
 a {
@@ -183,9 +185,28 @@ body {
   font-size:1.042vw;
   color: #E9F2FF;
 }
-.light-dark img {
+/* .light-dark img {
    width: 2.6vw;
-   height: 2.22vh;
+   height: 2.75vh;
+} */
+
+.light-dark .btnOutside {
+  width: 2.6vw;
+  height: 2.75vh;
+  background-color: var(--bg-color);
+  border-radius: 2.5vh;
+  transform: translateY(20%);
+}
+.btnOutside .btnInside {
+  position: relative;
+  float:var(--float-ld);
+  width: 1.05vw;
+  height: 1.05vw;
+  border-radius: 100%;
+  background-color: var(--ld-color);
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0vw 0.25vw;
 }
 .line2 span {
   font-weight: 100;

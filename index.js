@@ -2,7 +2,9 @@ import {loadFile} from "./Reuse/shared.js";
 // Load navbar
 loadFile("./Reuse/Navbar/navbar.html", "navbar");
 var banner = document.getElementById("banner")
-
+// Load footer
+loadFile("./Reuse/footer/footer.html", "footer");
+// Main
 import {checkTime} from "./Reuse/shared.js";
 if (checkTime()) {
     banner.innerHTML = "<img src=\"./Pages/Homepage/bannerLight.png\">"

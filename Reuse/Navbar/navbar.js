@@ -20,19 +20,20 @@ document.addEventListener('click', (event => {
 // theme button 
 var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
-function switchTheme(bgColor, txtColor, lanShadow, switchImg, status) {
+function switchTheme(bgColor, txtColor, lanShadow, ldFloat, ldColor, status) {
     r.style.setProperty('--bg-color', bgColor);
     r.style.setProperty('--txt-color', txtColor);
     r.style.setProperty('--lan-shadow', lanShadow);
-    lida.innerHTML = "<img src=\"".concat(switchImg, "\" width=\"37.5px\" height=\"18px\">")
+    r.style.setProperty('--float-ld', ldFloat);
+    r.style.setProperty('--ld-color', ldColor);
     ldStatus.innerHTML = status;
 }
 function themeBool(l = true) {
     if (l) {
-        switchTheme("#E9F2FF", "#132235", "#13223526", "./Reuse/Navbar/lightMode.png", "Light mode");
+        switchTheme("#E9F2FF", "#132235", "#13223526", "right", "#F7C215", "Light mode");
         // location.href='#light';
     } else {
-        switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "./Reuse/Navbar/darkSwitch.png", "Dark mode");
+        switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "left", "#E9F2FF", "Dark mode");
         // location.href='#dark';
     }
 }

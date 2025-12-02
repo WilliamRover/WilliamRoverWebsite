@@ -4,7 +4,7 @@
   height: 26.5rem;
   /* margin-top: var(--nav-height); */
   object-fit: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 15.5rem, 23.5rem 25rem, 0 15.5rem);
+  clip-path: polygon(0 0, 100% 0, 100% 58%, 23% 93.5%, 0 58%);
   z-index: 1;
 }
 .avt img {
@@ -15,7 +15,7 @@
   color:var(--txt-color);
   position: absolute;
   margin-top: -6rem;
-  margin-left:16.9rem;
+  margin-left:17%;
 }
 .info {
   text-align: center;
@@ -43,9 +43,9 @@
 
 .desc {
   position: relative;
-  width:47.5rem;
+  width:50%;
   height:11rem;
-  margin-left:35rem;
+  margin-left:38%;
   margin-top:3rem;
 }
 .descLine {
@@ -206,3 +206,4 @@
         height: 18rem;
   }
 }
+

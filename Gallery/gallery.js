@@ -1,5 +1,5 @@
-import {loadFile} from "../../Reuse/shared.js";
+import {loadFile} from "../Reuse/shared.js";
 // Load navbar
-loadFile("../../Reuse/Navbar/navbar.html", "navbar");
+loadFile("../Reuse/Navbar/navbar.html", "navbar");
 // Load footer
-loadFile("../../Reuse/Footer/footer.html", "footer");
+loadFile("../Reuse/Footer/footer.html", "footer");

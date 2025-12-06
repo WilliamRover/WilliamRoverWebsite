@@ -11,6 +11,8 @@ export function loadFile(file, id) {
             script.type = "module";
 
             document.body.appendChild(script);
+
+            return true;
         });
 }
 // Check time

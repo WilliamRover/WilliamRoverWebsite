@@ -7,16 +7,16 @@ loadFile("../Reuse/Footer/footer.html", "footer");
 // Main
 import {checkTime} from "../Reuse/shared.js";
 if (checkTime()) {
-    banner.innerHTML = "<img src=\".\\bannerLight.png\">"
+    banner.innerHTML = "<img src=\".\\img\\bannerLight.png\">"
 } else if (checkTime() == false) {
-    banner.innerHTML = "<img src=\".\\bannerDark.png\">"
+    banner.innerHTML = "<img src=\".\\img\\bannerDark.png\">"
 }
 
 window.onclick = function() {
     var light = window.getComputedStyle(document.body).getPropertyValue('--light');
     if (light == 'true') {
-        banner.innerHTML = "<img src=\".\\bannerLight.png\">"
+        banner.innerHTML = "<img src=\".\\img\\bannerLight.png\">"
     } else if (light == 'false') {
-        banner.innerHTML = "<img src=\".\\bannerDark.png\">"
+        banner.innerHTML = "<img src=\".\\img\\bannerDark.png\">"
     }
 }

@@ -1,0 +1,41 @@
+{
+    "navbar": {
+        "buttons": {
+            "gallery": "Galleria",
+            "projects": "Projektit",
+            "comics": "Sarjakuvat"
+        },
+        "search": "Haku...",
+        "lan": [
+            {
+                "innerImg":"../Reuse/Navbar/img/Flag_of_Finland-01.png",
+                "innerSpan":"Suomeksi",
+                "lang":"fi"
+            },
+            {
+                "innerImg": "../Reuse/Navbar/img/Flag_of_England.png",
+                "innerSpan": "English", 
+                "lang": "en"
+            },
+            {
+                "innerImg":"../Reuse/Navbar/img/Flag_of_Vietnam.svg.png",
+                "innerSpan":"Tiếng Việt",
+                "lang": "vn"
+            }
+        ],
+        "theme": ["Valo tila", "Tumma tila"]
+    },
+
+    "footer": {
+        "desc": "Ei mitään nähtä täällä :P"
+    },
+
+    "homepage": {
+        "desc": "Normaali nisäkäs hengittää maan ilmaa. Opiskelen yliopistossa hetkellä. Mulla kokemusta graafisesta suunnittelusta, front-end-kehityksestä ja kuvittamisesta. Silloin tällöin teen sarjakuvia harrastuksena.",
+        "category": {
+            "cat1": "GALLERIA",
+            "cat2": "PROJEKTIT",
+            "cat3": "SARJAKUVAT\n(pian)"
+        }
+    }
+}

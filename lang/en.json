@@ -1,0 +1,41 @@
+{
+    "navbar": {
+        "buttons": {
+            "gallery": "Gallery",
+            "projects": "Projects",
+            "comics": "Comics"
+        },
+        "search": "Search item...",
+        "lan": [ 
+            {
+                "innerImg": "../Reuse/Navbar/img/Flag_of_England.png",
+                "innerSpan": "English", 
+                "lang":"en"
+            },
+            {
+                "innerImg":"../Reuse/Navbar/img/Flag_of_Finland-01.png",
+                "innerSpan":"Suomeksi",
+                "lang": "fi"
+            },
+            {
+                "innerImg":"../Reuse/Navbar/img/Flag_of_Vietnam.svg.png",
+                "innerSpan":"Tiếng Việt",
+                "lang": "vn"
+            }
+        ],
+        "theme": ["Light mode", "Dark mode"]
+    },
+
+    "footer": {
+        "desc": "Nothing to see here :P"
+    },
+
+    "homepage": {
+        "desc": "A normal mammal breathing Earth’s air. Currently studying in university. Has experiences in graphic designing, front-end developing and illustrating. Occasionally creates comics as a hobby.",
+        "category": {
+            "cat1": "GALLERY",
+            "cat2": "PROJECTS",
+            "cat3": "COMICS\n(coming soon)"
+        }
+    }
+}

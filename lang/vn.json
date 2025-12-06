@@ -1,0 +1,41 @@
+{
+    "navbar": {
+        "buttons": {
+            "gallery": "Triển lãm",
+            "projects": "Dự án",
+            "comics": "Truyện tranh"
+        },
+        "search": "Tìm kiếm...",
+        "lan": [
+            {
+                "innerImg":"../Reuse/Navbar/img/Flag_of_Vietnam.svg.png",
+                "innerSpan":"Tiếng Việt",
+                "lang":"vn"
+            },
+            {
+                "innerImg":"../Reuse/Navbar/img/Flag_of_Finland-01.png",
+                "innerSpan":"Suomeksi",
+                "lang": "fi"
+            },
+            {
+                "innerImg": "../Reuse/Navbar/img/Flag_of_England.png",
+                "innerSpan": "English", 
+                "lang": "en"
+            }
+        ],
+        "theme": ["Nền sáng", "Nền tối"]
+    },
+
+    "footer": {
+        "desc": "Đếch có gì ở đây đâu mà tò với mò :P"
+    },
+
+    "homepage": {
+        "desc": "Một thằng động vật có vú đang thở không khí Trái Đất. Là một chú sinh viên. Có kinh nghiệm trong thiết kế đồ họa, lập trình front-end và minh họa. Đôi khi thích thì vẽ truyện.",
+        "category": {
+            "cat1": "TRIỂN LÃM",
+            "cat2": "DỰ ÁN",
+            "cat3": "TRUYỆN TRANH\n(đến sau)"
+        }
+    }
+}

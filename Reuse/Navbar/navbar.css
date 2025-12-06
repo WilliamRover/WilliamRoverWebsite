@@ -8,6 +8,7 @@
     --light:true;
     --float-ld: left;
     --ld-color:#F7C215;
+    --cur-lan:en;
     /* --nav-height:0px; */
 }
 
@@ -170,11 +171,11 @@ body {
   display: block;
   margin:10px 16px;
 }
-.flag {
+.flagImg {
   margin-right: 0.521vw;
 }
 #curLan {
-  margin-right:0.521vw;
+  margin-right:0.3vw;
 }
 .right-side .line2 {
   color: #E9F2FF;

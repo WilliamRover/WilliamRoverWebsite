@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html>
+        <link rel="preload" href="../Reuse/Navbar/navbar.css" as="style">
+        <link rel="preload" href="../Reuse/Navbar/navbar.js" as="script">
+        <link rel="preload" href="../lang.js" as="script">
         <link rel="stylesheet" href="../Reuse/Navbar/navbar.css">
-    </head>
     <body>
         <div class="navbar">
             <div class="left-side">
                 <div class="logo">
-                    <a href="../Homepage/"><img src="../Reuse/Navbar/logo wr.png" alt="click here"></a>
+                    <a href="../Homepage/"><img src="../Reuse/Navbar/img/logo wr.png" alt="click here"></a>
                 </div>
                 <div class="buttons">
-                    <a href="../Gallery/">Gallery</a>
-                    <a href="">Projects</a>
-                    <a href="">Comics</a>
+                    <a href="../Gallery/" idLan="navbar.buttons.gallery">Gallery</a>
+                    <a href="" idLan="navbar.buttons.projects">Projects</a>
+                    <a href="" idLan="navbar.buttons.comics">Comics</a>
                 </div>
             </div>
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search item...">
+                <input type="search" placeholder="" id="search">
             </div>
             <div class="right-side">
                 <div class="lan" id ="lan">
-                    <button class="lanbtn" id="lanbtnID"><img src="../Reuse/Navbar/Flag_of_England.png" id="flagCur" class="flag" alt=""><span id="curLan">English</span><i class="fa-solid fa-caret-down"></i></button>
+                    <button class="lanbtn" id="lanbtnID"><img src="" id="flagCur" class="flagImg" alt=""><span id="curLan" class="lanSpan"></span><i class="fa-solid fa-caret-down"></i></button>
                     <div class="dropdown-list" id="dropdownList">
-                        <button id="lanButtonTop"><div class="flagDrop"><img src="../Reuse/Navbar/Flag_of_Finland-01.png" id="flag1" class="flag" alt=""><span>Suomeksi</span></div></button>
+                        <button id="lanButtonTop"><div class="flagDrop"><img src="" id="flag1" class="flagImg" alt=""><span id="topLan" class="lanSpan"></span></div></button>
                         <hr id="line">
-                        <button id="lanButtonBottom"><div class="flagDrop"><img src="../Reuse/Navbar/Flag_of_Vietnam.svg.png" id="flag2" class="flag" alt=""><span>Tiếng Việt</span></div></button>
+                        <button id="lanButtonBottom"><div class="flagDrop"><img src="" id="flag2" class="flagImg" alt=""><span id="botLan" class="lanSpan"></span></div></button>
                     </div>
                 </div>
                 <div class="line2"><span>|</span></div>
                 <div class="light-dark" id="themeSwitch">
-                    <span id="ldStatus">Light mode</span>
+                    <span id="ldStatus"></span>
                     <button class="ldbtn" id="LDbtn">
                          <div class="btnOutside">
                             <div class="btnInside"></div>
@@ -40,5 +41,6 @@
             </div>
         </div>
         <script src="../Reuse/Navbar/navbar.js" async defer type="module"></script>
+        <script src="../lang.js" async defer type="module"></script>
     </body>
 </html>

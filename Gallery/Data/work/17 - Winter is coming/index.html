@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Moving BG</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="movingBG.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div id="scene">
+        <div data-depth="0.00"><img src="layer 0 - sky - sta.png" class="img img0"></div>
+        <div><img src="smoke1.png" class="img smoke smoke1"></div>
+        <div data-depth="0.10"><img src="animated1.png" class="img img1"></div>
+        <div data-depth="0.20"><img src="animated2.png" class="img img2"></div>
+        <div data-depth="0.40"><img src="animated3.png" class="img img3"></div>
+        <div data-depth="0.60"><img src="animated4.png" class="img img4"></div>
+        <div data-depth="0.80"><img src="animated5.png" class="img img5"></div>
+        <div data-depth="0.90"><img src="layer 6 - exterior - 1372.6996 x 671.4818.png" class="img img6"></div>
+        <div data-depth="1.00"><img src="animated7.png" class="img img7"></div>
+        <div><img src="smoke2.png" class="img smoke smoke2"></div>
+    </div>
+</div>
+
+<script src="parallax.js"></script>
+<script>
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+</script>
+
+</body>
+</html>

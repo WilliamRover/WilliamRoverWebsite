@@ -1,0 +1,80 @@
+[
+    {
+        "fileNum": 1,
+        "fileName": "1st digital picture",
+        "type": {
+            "generalType": "Image",
+            "fileType": [".jpg"]
+        },
+        "dateCreated": "(Untracable)",
+        "dimension": "1440 x 1037",
+        "fileSize": "60.4 KB",
+        "download": true,
+        "link": "./Data/work/1 - 1st digital picture.jpg"
+    },
+    {
+        "fileNum": 2,
+        "fileName": "Animator in sunset",
+        "type": {
+            "generalType": "Image",
+            "fileType": [".jpg"]
+        },
+        "dateCreated": "May 2021",
+        "dimension": "2048 x 2048",
+        "fileSize": "226 KB",
+        "download": true,
+        "link": "./Data/work/2 - Animator in sunset.jpg"
+    },
+    {
+        "fileNum": 3,
+        "fileName": "Glowing deer found by a hunter",
+        "type": {
+            "generalType": "Image",
+            "fileType": [".png"]
+        },
+        "dateCreated": "(Untracable)",
+        "dimension": "1200 x 800",
+        "fileSize": "3.57 MB",
+        "download": true,
+        "link": "./Data/work/3 - Glowing deer found by a hunter.png"
+    },
+    {
+        "fileNum": 4,
+        "fileName": "Couple walking in winter forest",
+        "type": {
+            "generalType": "Image",
+            "fileType": [".png"]
+        },
+        "dateCreated": "(Untracable)",
+        "dimension": "1200 x 800",
+        "fileSize": "3.80 MB",
+        "download": true,
+        "link": "./Data/work/4 - Couple walking in winter forest.png"
+    },
+    {
+        "fileNum": 5,
+        "fileName": "A couple kiss",
+        "type": {
+            "generalType": "Image",
+            "fileType": [".png"]
+        },
+        "dateCreated": "(Untracable)",
+        "dimension": "1200 x 800",
+        "fileSize": "4.68 MB",
+        "download": true,
+        "link": "./Data/work/5 - A couple kiss.png"
+    },
+    {
+        "fileNum": 6,
+        "fileName": "Night winter nature",
+        "type": {
+            "generalType": "Image",
+            "fileType": [".png"]
+        },
+        "dateCreated": "June 2021",
+        "dimension": "1200 x 800",
+        "fileSize": "3.79 MB",
+        "download": true,
+        "link": "./Data/work/6 - Night winter nature.png"
+    }
+]

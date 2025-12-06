@@ -17,35 +17,115 @@ document.addEventListener('click', (event => {
         r.style.setProperty('--lan-show', "none");
     }
 }))
+
+function reloadCss()
+{
+    var links = document.getElementsByTagName("link");
+    for (var cl in links)
+    {
+        var link = links[cl];
+        if (link.rel === "stylesheet")
+            link.href += "";
+    }
+}
+
+// Lan switching
+// Lan button
+var lan1Btn = document.getElementById("lanButtonTop")
+var lan2Btn = document.getElementById("lanButtonBottom")
+// var lanArr = ["../lang/en.json", "../lang/fi.json", "../lang/vn.json"]
+var curLan = localStorage.getItem('selectedLanguage') || 'en';
+switchLanBtn(curLan)
+
+import {translateData} from "../../lang.js";
+translateData(curLan)
+
+
+lan1Btn.onclick = function() {
+    console.log("Top is clicked")
+    checkSwitchPos(curLan, 1)
+}
+lan2Btn.onclick = function() {
+    console.log("Bot is clicked")
+    checkSwitchPos(curLan, 2)
+}
+
+function switchLanBtn(key) {
+    fetch(`../lang/${key}.json`).then(response => {
+        return response.json();
+    }).then(file => {
+        let lanPos = file["navbar"]["lan"]
+        // Lan img
+        var lanImgArr = document.getElementsByClassName("flagImg")
+        // Lan span
+        var lanSpanArr = document.getElementsByClassName("lanSpan")
+        for (let i = 0; i < lanImgArr.length; i++) {
+            lanImgArr[i].src = lanPos[i]["innerImg"]
+            lanSpanArr[i].innerHTML = lanPos[i]["innerSpan"]
+        }
+        var search = document.getElementById("search")
+        search.placeholder = file["navbar"]["search"]
+        r.style.setProperty('--cur-lan', lanPos[0]["lang"]);
+        curLan = window.getComputedStyle(document.body).getPropertyValue('--cur-lan');
+        localStorage.setItem('selectedLanguage', curLan);
+        if (light) {
+            switchLanLight(curLan, 0)
+        } else {
+            switchLanLight(curLan, 1)
+        }
+        console.log(curLan)
+        translateData(curLan)
+    })
+}
+
+function checkSwitchPos(key, pos) {
+    fetch(`../lang/${key}.json`).then(response => {
+        return response.json();
+    }).then(file => {
+        var lang = file["navbar"]["lan"]
+        switchLanBtn(lang[pos]["lang"])
+    });
+}
+    
 // theme button 
 var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
-function switchTheme(bgColor, txtColor, lanShadow, ldFloat, ldColor, lanHover, status) {
+
+function switchLanLight(key, statusIndex) {
+    fetch(`../lang/${key}.json`).then(response => {
+        return response.json();
+    }).then(file => {
+        let lightStat = file["navbar"]["theme"][statusIndex]
+        ldStatus.innerHTML = lightStat
+    })
+}
+function switchTheme(bgColor, txtColor, lanShadow, ldFloat, ldColor, lanHover, statusIndex) {
     r.style.setProperty('--bg-color', bgColor);
     r.style.setProperty('--txt-color', txtColor);
     r.style.setProperty('--lan-shadow', lanShadow);
     r.style.setProperty('--float-ld', ldFloat);
     r.style.setProperty('--ld-color', ldColor);
     r.style.setProperty('--lan-hover', lanHover);
-    ldStatus.innerHTML = status;
+    // ldStatus.innerHTML = status;\
+    switchLanLight(curLan, statusIndex)
 }
 function themeBool(l = true) {
     if (l) {
-        switchTheme("#E9F2FF", "#132235", "#13223526", "right", "#F7C215", "#c5ccd5", "Light mode");
+        switchTheme("#E9F2FF", "#132235", "#13223526", "right", "#F7C215", "#c5ccd5", 0);
         // location.href='#light';
     } else {
-        switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "left", "#E9F2FF", "#1f3046ff", "Dark mode");
+        switchTheme("#132235", "#E9F2FF", "#E9F2FF26", "left", "#E9F2FF", "#1f3046ff", 1);
         // location.href='#dark';
     }
 }
-
+var light
 import {checkTime} from "../../Reuse/shared.js";
 if (checkTime()) {
-    var light = true
+    light = true
     r.style.setProperty('--light', light);
     themeBool();
 } else if (checkTime() == false) {
-    var light = false
+    light = false
     r.style.setProperty('--light', light);
     themeBool(false);
 }
@@ -60,3 +140,4 @@ lida.onclick = function() {
         console.log("lights off")
     }
 }
+

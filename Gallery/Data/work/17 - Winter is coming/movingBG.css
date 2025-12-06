@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+}
+.img0 {
+    width: 100vw;
+}
+
+.smoke1 {
+    opacity:100%;
+}
+.img1 {
+    width: 45%;
+    /* max-height: 100vh; */
+    margin-top:32.5vh;
+    margin-left:-10vw;
+}
+.img2 {
+    width: 85%;
+    /* max-height: 100vh; */
+    margin-top:30vh;
+    margin-left:-25vw;
+}
+.img3 {
+    width: 60%;
+    /* max-height: 60vh; */
+    margin-top:17%;
+    padding-left: 30vw;
+}
+.img4 {
+    width: 30%;
+    /* max-height: 30vh; */
+    margin-top:31.5%;
+    padding-left: 51vw;
+}
+.img5 {
+    width: 42.5%;
+    /* max-height: 43vh; */
+    margin-top:29.5%;
+    padding-left: 38vw;
+}
+
+.img6 {
+    width: 83%;
+    /* max-height: 100vh; */
+    margin-top:9vh;
+    padding-left: 26vw;
+}
+.smoke2 {
+    opacity: 50%;
+}

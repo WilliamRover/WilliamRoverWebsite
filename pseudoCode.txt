@@ -1,0 +1,4 @@
+Automatic add line after section (1 section = 3 works):
+    WHEN work > 3
+    THEN createClassSection()
+    addLine()

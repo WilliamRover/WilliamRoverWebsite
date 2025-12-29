@@ -24,6 +24,10 @@ a {
   src: url(../../Montserrat-SemiBold.ttf);
 }
 @font-face {
+  font-family: MontseEXTRABOLD;
+  src: url(../../Montserrat-ExtraBold.ttf);
+}
+@font-face {
   font-family: MontseREG;
   src: url(../../Montserrat-VariableFont_wght.ttf);
 }
@@ -34,6 +38,11 @@ a {
 @font-face {
   font-family: MulishSEMIBOLD;
   src: url(../../Mulish-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: MulishREG;
+  src: url(../../Mulish-Regular.ttf);
 }
 
 body {

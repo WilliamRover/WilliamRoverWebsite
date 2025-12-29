@@ -7,15 +7,15 @@
     //   console.log(file["navbar"]["lan"]["curLan"])
     //   a[0].innerHTML = file["homepage"]["desc"]
 // })
-function printNested(obj) {
-  if (typeof obj === 'object') {
-    for (let key in obj) {
-      printNested(obj[key]);
-    }
-  } else {
-    console.log(obj);
-  }
-}
+// function printNested(obj) {
+//   if (typeof obj === 'object') {
+//     for (let key in obj) {
+//       printNested(obj[key]);
+//     }
+//   } else {
+//     console.log(obj);
+//   }
+// }
 function getNested(obj, path) {
     return path.split('.').reduce((o, k) => o?.[k], obj);
 }
@@ -30,7 +30,7 @@ export function translateData(lan) {
       var b = a[i].getAttribute("idLan")
       var res = getNested(file, b)
       a[i].innerHTML = res
-      console.log(res)
+      // console.log(res)
       // printNested(file[pageName])
     }
   })

@@ -37,5 +37,26 @@
             "cat2": "PROJEKTIT",
             "cat3": "SARJAKUVAT\n(pian)"
         }
+    },
+
+    "gallery": {
+        "sort": {
+            "aToz": "A:sta Ö:hön",
+            "zToa": "Ö:sta A:hön",
+            "newest": "Uusin ensin",
+            "oldest": "Vanhin ensin"
+        },
+        "work": {
+            "info": {
+                "author": "Kirjoittaja: ",
+                "dateCreated": "Luontipäivämäärä: ",
+                "type": "Tyyppi: "
+            },
+            "function": {
+                "view": "Näytä työ",
+                "download": "Lataa",
+                "link": "Linkki"
+            }
+        }
     }
 }

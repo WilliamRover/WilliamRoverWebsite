@@ -22,35 +22,49 @@
     </head>
     <body>
         <div id="navbar"></div>
-        <div class="midpage">
+        <div class="midpage" id="midpage">
             <div class="sort">
                 <div class="sort1">
                     <button id="sortTile"><img src="./img/tileIcon-01.png" alt=""></button>
                     <button id="sortGrid"><img src="./img/gridIcon.png" alt=""></button>
                 </div>
                 <div class="sort2">
-                    <button id="alphabetical"><span>A to Z</span></button>
-                    <button id="alphabeticalRev"><span>Z to A</span></button>
-                    <button id="newest"><span>Newest first</span></button>
-                    <button id="oldest"><span>Oldest first</span></button>
+                    <button id="alphabetical"><span idLan="gallery.sort.aToz">A to Z</span></button>
+                    <button id="alphabeticalRev"><span idLan="gallery.sort.zToa">Z to A</span></button>
+                    <button id="newest"><span idLan="gallery.sort.newest">Newest first</span></button>
+                    <button id="oldest"><span idLan="gallery.sort.oldest">Oldest first</span></button>
                 </div>
             </div>
-            <div class="section">
-                <div class="work">
-                    <div class="workImg"></div>
-                    <span class="worlTitle">Forgot her glove lol</span>
+
+            <div class="section" id="sectionTemp">
+                <!-- <div class="work" id="workTemp">
+                    <div class="workImg"><img src="" idGal="thumbnail" alt=""></div>
+                    <div class="workName"><span class="workTitle" idGal="fileName">Forgot her glove lol</span></div>
                     <div class="workDesc">
-                        <span><b>Author: </b><span>[insert text here idk]</span><br></span>
-                        <span><b>Date created: </b><span>[insert text here idk]</span><br></span>
-                        <span><b>Type: </b><span>[insert text here idk]</span></span>
+                        <b idLan="gallery.work.info.author">Author: </b><span idGal="author">[insert text here idk]</span><br>
+                        <b idLan="gallery.work.info.dateCreated">Date created: </b><span idGal="dateCreated">[insert text here idk]</span><br>
+                        <b idLan="gallery.work.info.type">Type: </b><span idGal="type.generalType">[insert text here idk]</span>
                     </div>
                     <div class="workButton">
-                        <button id="view"><img src="./img/viewIcon-01.png" alt=""><span>View work</span></button>
-                        <button id="view"><img src="./img/downloadIcon-01.png" alt=""><span>Download</span></button>
-                        <button id="view"><img src="./img/linkIcon-01.png" alt=""><span>Link</span></button>
+                        <button id="view"><img src="./img/viewIcon-01.png" alt=""><span idLan="gallery.work.function.view">View work</span></button>
+                        <button id="view"><img src="./img/downloadIcon-01.png" alt=""><span idLan="gallery.work.function.download">Download</span></button>
+                        <button id="view"><img src="./img/linkIcon-01.png" alt=""><span idLan="gallery.work.function.link">Link</span></button>
+                    </div>
+                </div> -->
+                <div class="work" id="workTemp">
+                    <div class="workImg"><img src="" class="thumbnail" alt=""></div>
+                    <div class="workName"><span class="workTitle fileName">[put title here]]</span></div>
+                    <div class="workDesc">
+                        <b idLan="gallery.work.info.author">Author: </b><span class="author">[insert text here idk]</span><br>
+                        <b idLan="gallery.work.info.dateCreated">Date created: </b><span class="dateCreated">[insert text here idk]</span><br>
+                        <b idLan="gallery.work.info.type">Type: </b><span class="type.generalType">[insert text here idk]</span>
+                    </div>
+                    <div class="workButton">
+                        <button id="view"><img src="./img/viewIcon-01.png" alt=""><span idLan="gallery.work.function.view">View work</span></button>
+                        <button id="view"><img src="./img/downloadIcon-01.png" alt=""><span idLan="gallery.work.function.download">Download</span></button>
+                        <button id="view"><img src="./img/linkIcon-01.png" alt=""><span id  Lan="gallery.work.function.link">Link</span></button>
                     </div>
                 </div>
-                
             </div>
         </div>
         <div id="footer"></div>

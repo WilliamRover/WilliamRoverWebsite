@@ -37,5 +37,26 @@
             "cat2": "PROJECTS",
             "cat3": "COMICS\n(coming soon)"
         }
+    },
+
+    "gallery": {
+        "sort": {
+            "aToz": "A to Z",
+            "zToa": "Z to A",
+            "newest": "Newest first",
+            "oldest": "Oldest first"
+        },
+        "work": {
+            "info": {
+                "author": "Author: ",
+                "dateCreated": "Date created: ",
+                "type": "Type: "
+            },
+            "function": {
+                "view": "View work",
+                "download": "Download",
+                "link": "Link"
+            }
+        }
     }
 }

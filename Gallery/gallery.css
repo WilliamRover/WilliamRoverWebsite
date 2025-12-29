@@ -1,6 +1,7 @@
 .midpage {
     width: 1200px;
     margin: 0 auto;
+    /* font-family: MulishSEMIBOLD; */
 }
 /* Sort */
 .sort {
@@ -48,14 +49,79 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* margin-top: 7.5rem; */
+    margin-top: 37.5px;
 }
 .section .work {
     width:360px;
 }
+.workTitle, .workDesc {
+    color: var(--txt-color);
+}
+.workImg img {
+    width: 100%;
+    max-height:195px;
+    object-fit: cover;
+    border-radius: 25px 25px 0 0;
+}
 .workImg {
-    width: 360px;
-    height:195px;
-    background: url("./Data/work/21\ -\ Forgot\ her\ glove\ lol.png") center;
-    background-size: cover;
+    min-width: 360px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom:9.5px;
+}
+.workName {
+    max-width:360px;
+}
+.workTitle {
+    font-family:MontseEXTRABOLD;
+    /* font-weight: 700; */
+    letter-spacing: 0.1rem;
+    font-size:24px;
+}
+.workDesc {
+    margin-top:4px;
+    letter-spacing: 0.05rem;
+}
+.workDesc span{
+    font-style: italic;
+}
+.workButton {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:8.25px;
+}
+.workButton button {
+    height: 30px;
+    border:none;
+    padding:0 16px;
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+}
+.workButton button:nth-child(1) {
+    background-color: #063B7D;
+    color: #E9F2FF;
+}
+.workButton button:nth-child(2), .workButton button:nth-child(3) {
+    background-color: #4A627F;
+    color:#D3E5FF;
+}
+.workButton img {
+    width:18px;
+    margin-top:-0.2rem;
+}
+.workButton button:nth-child(2) img{
+    width:16px;
+    margin-top:-0.2rem;
+}
+.workButton span {
+    margin-left:6.75px;
+    font-family: MulishREG;
+    letter-spacing: 0.02rem;
+    font-weight: 100;
+}
+
+#sectionTemp {
+    display: none;
 }

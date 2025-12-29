@@ -37,5 +37,26 @@
             "cat2": "DỰ ÁN",
             "cat3": "TRUYỆN TRANH\n(đến sau)"
         }
+    },
+
+    "gallery": {
+        "sort": {
+            "aToz": "A đến Z",
+            "zToa": "Z đến A",
+            "newest": "Mới nhất",
+            "oldest": "Cũ nhất"
+        },
+        "work": {
+            "info": {
+                "author": "Tác giả: ",
+                "dateCreated": "Ngày tạo: ",
+                "type": "Loại: "
+            },
+            "function": {
+                "view": "Xem tác phẩm",
+                "download": "Tải về",
+                "link": "Link"
+            }
+        }
     }
 }

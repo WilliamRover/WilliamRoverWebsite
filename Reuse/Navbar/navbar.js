@@ -18,8 +18,7 @@ document.addEventListener('click', (event => {
     }
 }))
 
-function reloadCss()
-{
+function reloadCss() {
     var links = document.getElementsByTagName("link");
     for (var cl in links)
     {

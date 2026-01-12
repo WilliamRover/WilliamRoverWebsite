@@ -4,10 +4,11 @@
         "fileName": "1st digital picture",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".jpg"]
         },
-        "dateCreated": "(Untracable)",
+        "dateCreated": "gallery.date.0",
+        "yearCreated": "",
         "dimension": "1440 x 1037",
         "fileSize": "60.4 KB",
         "download": true,
@@ -18,10 +19,11 @@
         "fileName": "Animator in sunset",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".jpg"]
         },
-        "dateCreated": "May 2021",
+        "dateCreated": "gallery.date.5",
+        "yearCreated": "2021",
         "dimension": "2048 x 2048",
         "fileSize": "226 KB",
         "download": true,
@@ -32,10 +34,11 @@
         "fileName": "Glowing deer found by a hunter",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "(Untracable)",
+        "dateCreated": "gallery.date.0",
+        "yearCreated": "",
         "dimension": "1200 x 800",
         "fileSize": "3.57 MB",
         "download": true,
@@ -46,10 +49,11 @@
         "fileName": "Couple walking in winter forest",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "(Untracable)",
+        "dateCreated": "gallery.date.0",
+        "yearCreated": "",
         "dimension": "1200 x 800",
         "fileSize": "3.80 MB",
         "download": true,
@@ -60,10 +64,11 @@
         "fileName": "A couple kiss",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "(Untracable)",
+        "dateCreated": "gallery.date.0",
+        "yearCreated": "",
         "dimension": "1200 x 800",
         "fileSize": "4.68 MB",
         "download": true,
@@ -74,10 +79,11 @@
         "fileName": "Night winter nature",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "June 2021",
+        "dateCreated": "gallery.date.6",
+        "yearCreated": "2021",
         "dimension": "1200 x 800",
         "fileSize": "3.79 MB",
         "download": true,
@@ -88,10 +94,11 @@
         "fileName": "Inspiration by Bich Nguyen",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".jpg"]
         },
-        "dateCreated": "June 2021",
+        "dateCreated": "gallery.date.6",
+        "yearCreated": "2021",
         "dimension": "1200 x 600",
         "fileSize": "92.5 KB",
         "download": true,
@@ -102,10 +109,11 @@
         "fileName": "Playing guitar on a beach",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "July 2021",
+        "dateCreated": "gallery.date.7",
+        "yearCreated": "2021",
         "dimension": "1200 x 600",
         "fileSize": "120 KB",
         "download": true,
@@ -116,10 +124,11 @@
         "fileName": "An artist in rainy street",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "August 2021",
+        "dateCreated": "gallery.date.8",
+        "yearCreated": "2021",
         "dimension": "1200 x 800",
         "fileSize": "15.8 MB",
         "download": true,
@@ -130,10 +139,11 @@
         "fileName": "Lest we forget",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "(Untracable)",
+        "dateCreated": "gallery.date.0",
+        "yearCreated": "",
         "dimension": "1200 x 800",
         "fileSize": "997 KB",
         "download": true,
@@ -144,10 +154,11 @@
         "fileName": "Couple huging in black starry night",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "September 2021",
+        "dateCreated": "gallery.date.9",
+        "yearCreated": "2021",
         "dimension": "1200 x 800",
         "fileSize": "7.35 MB",
         "download": true,
@@ -158,10 +169,11 @@
         "fileName": "The warmth of love in the cold winter",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".jpg"]
         },
-        "dateCreated": "August 2022",
+        "dateCreated": "gallery.date.8",
+        "yearCreated": "2022",
         "dimension": "1200 x 800",
         "fileSize": "7.76 MB",
         "download": true,
@@ -172,10 +184,11 @@
         "fileName": "Alone in the plain",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "September 2022",
+        "dateCreated": "gallery.date.9",
+        "yearCreated": "2022",
         "dimension": "1200 x 800",
         "fileSize": "8.21 MB",
         "download": true,
@@ -186,10 +199,11 @@
         "fileName": "Bài cuối môn DI",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "November 2022",
+        "dateCreated": "gallery.date.11",
+        "yearCreated": "2022",
         "dimension": "1200 x 800",
         "fileSize": "7.42 MB",
         "download": true,
@@ -200,10 +214,11 @@
         "fileName": "Happy new painful year",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "December 2022",
+        "dateCreated": "gallery.date.12",
+        "yearCreated": "2022",
         "dimension": "1200 x 800",
         "fileSize": "953 KB",
         "download": true,
@@ -214,10 +229,11 @@
         "fileName": "Knight of the sky",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Video",
+            "generalType": "gallery.typeGeneral.1",
             "fileType": [".mp4"]
         },
-        "dateCreated": "December 2022",
+        "dateCreated": "gallery.date.12",
+        "yearCreated": "2022",
         "dimension": "1200 x 800",
         "fileSize": "17.9 MB",
         "download": true,
@@ -228,10 +244,11 @@
         "fileName": "Winter is coming",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Interactive background",
+            "generalType": "gallery.typeGeneral.2",
             "fileType": [".html", ".css", ".js", ".apng"]
         },
-        "dateCreated": "October 2024",
+        "dateCreated": "gallery.date.10",
+        "yearCreated": "2024",
         "dimension": "1920 x 1080",
         "fileSize": "115 MB",
         "download": true,
@@ -242,10 +259,11 @@
         "fileName": "West Point rural, South Sodotka",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Interactive background",
+            "generalType": "gallery.typeGeneral.2",
             "fileType": [".html", ".css", ".js", ".mp4", ".ttf"]
         },
-        "dateCreated": "December 2024",
+        "dateCreated": "gallery.date.12",
+        "yearCreated": "2024",
         "dimension": "1920 x 1080",
         "fileSize": "139 MB",
         "download": true,
@@ -256,10 +274,11 @@
         "fileName": "Vapausville rural, North Sodotka",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Interactive background",
+            "generalType": "gallery.typeGeneral.2",
             "fileType": [".html", ".css", ".js", ".mp4", ".ttf"]
         },
-        "dateCreated": "March 2025",
+        "dateCreated": "gallery.date.3",
+        "yearCreated": "2025",
         "dimension": "1920 x 1080",
         "fileSize": "96.4 MB",
         "download": true,
@@ -270,10 +289,11 @@
         "fileName": "Woliam city, Mylanisa",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Interactive background",
+            "generalType": "gallery.typeGeneral.2",
             "fileType": [".html", ".css", ".js", ".mp4", ".ttf"]
         },
-        "dateCreated": "September 2025",
+        "dateCreated": "gallery.date.9",
+        "yearCreated": "2025",
         "dimension": "1920 x 1080",
         "fileSize": "54 MB",
         "download": true,
@@ -284,10 +304,11 @@
         "fileName": "Forgot her glove lol",
         "author": ["William Rover"],
         "type": {
-            "generalType": "Image",
+            "generalType": "gallery.typeGeneral.0",
             "fileType": [".png"]
         },
-        "dateCreated": "November 2025",
+        "dateCreated": "gallery.date.11",
+        "yearCreated": "2025",
         "dimension": "1920 x 1080",
         "fileSize": "25.9 MB",
         "download": true,

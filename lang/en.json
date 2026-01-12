@@ -40,6 +40,8 @@
     },
 
     "gallery": {
+        "date": ["(Untracable)", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "typeGeneral":["Image", "Video", "Interactive background"],
         "sort": {
             "aToz": "A to Z",
             "zToa": "Z to A",

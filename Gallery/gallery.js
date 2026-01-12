@@ -1,5 +1,5 @@
 import {loadFile} from "../Reuse/shared.js";
-import {translateData} from "../../lang.js";
+import {translateData} from "../lang.js";
 // Load navbar
 loadFile("../Reuse/Navbar/navbar.html", "navbar");
 // Load footer

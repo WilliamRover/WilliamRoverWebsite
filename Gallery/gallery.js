@@ -25,7 +25,7 @@ class Sort {
     }
     
     #addToSection(i, sectionIndex) {
-        var work = document.getElementById("workTemp")
+        var work = document.getElementById("workTemp1")
         let div = document.createElement("div")
         div.id = "work".concat(i)
         div.classList.add("work")

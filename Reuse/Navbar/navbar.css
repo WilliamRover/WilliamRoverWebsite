@@ -1,6 +1,8 @@
 :root {
     --bg-color: #E9F2FF;
     --txt-color: #132235;
+    --mainBlue-color:#063B7D;
+    --mainBlue-hover-color:#052854;
     --cur-lan: #flagEng;
     --lan-show:none;
     --lan-shadow:#13223526;

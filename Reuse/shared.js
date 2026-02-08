@@ -92,10 +92,18 @@ export class Sort {
             if (i % 3 == 0 && this.sortMode == "Grid") {
                 sectionIndex ++
                 this.#createSection(sectionIndex)
-                    let div = document.createElement("div")
-                    div.id = "sectionLine".concat(sectionIndex)
-                    div.classList.add("sectionLine")
-                    document.getElementById("section".concat(sectionIndex)).appendChild(div)
+                let div = document.createElement("div")
+                div.id = "sectionLine".concat(sectionIndex)
+                div.classList.add("sectionLine")
+                document.getElementById("section".concat(sectionIndex)).appendChild(div)
+            }
+            if (this.sortMode == "Tile") {
+                sectionIndex ++
+                this.#createSection(sectionIndex)
+                let div = document.createElement("div")
+                div.id = "sectionLine".concat(sectionIndex)
+                div.classList.add("sectionLine")
+                document.getElementById("section".concat(sectionIndex)).appendChild(div)
             }
             this.#addToSection(Arr[i], sectionIndex)
         }

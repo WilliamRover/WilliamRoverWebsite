@@ -17,47 +17,54 @@ import {Sort} from "../Reuse/shared.js";
 //             new Sort(file).sortNewest()
 //         })
 
-var workSort = new Sort(`./Data/gallery.json`, "workTemp1", "Grid")
-function sortWork(curSort) {
+
+function sortWork(curSort, workClass) {
     changeColor(prevBtn, "#063B7D")
-    workSort.ready.then(() => {
+    workClass.ready.then(() => {
+        // console.log(workClass)
         switch (curSort) {
             case "newest":
                 changeColor(newBtn, "#052854")
                 prevBtn = newBtn
-                workSort.sortNewest()
+                workClass.sortNewest()
                 break
             case "oldest":
                 changeColor(oldBtn, "#052854")
                 prevBtn = oldBtn
-                workSort.sortOldest()
+                workClass.sortOldest()
                 break
             case "alphabetical":
                 changeColor(alphabetBtn, "#052854")
                 prevBtn = alphabetBtn
-                workSort.sortAtoZ()
+                workClass.sortAtoZ()
                 break
             case "alphabeticalRev":
                 changeColor(alphabetRevBtn, "#052854")
                 prevBtn = alphabetRevBtn
-                workSort.sortZtoA()
+                workClass.sortZtoA()
                 break
             case "clearWork":
-                workSort.clearWorkDiv()
-                break
+                workClass.clearWorkDiv()
+                return
         }
     })
 }
-
 // // newest, oldest, AtoZ, ZtoA
 var curSort = localStorage.getItem("selectedSort") || "newest"
+var curOrganize = localStorage.getItem("selectedOrganize") || "Grid"
+
+var workTemp = localStorage.getItem("workTemp") || "workTemp1"
+var workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize)
 // // console.log(curSort)
 var prevBtn;
-sortWork(curSort)
+sortWork(curSort, workOrganize)
 var newBtn = document.getElementById("sortBtnNewest")
 var oldBtn = document.getElementById("sortBtnOldest")
 var alphabetBtn = document.getElementById("sortBtnAlphabetical")
 var alphabetRevBtn = document.getElementById("sortBtnAlphabeticalRev")
+
+var gridBtn = document.getElementById("sortGrid")
+var tileBtn = document.getElementById("sortTile")
 
 function changeColor(obj, color) {
     try {
@@ -66,27 +73,63 @@ function changeColor(obj, color) {
         return;
     }
 }
+if (curOrganize == "Grid") {
+    changeColor(gridBtn, "#052854")
+} else {
+    changeColor(tileBtn, "#052854")
+}
+gridBtn.onclick = function() {
+    curOrganize = "Grid"
+    workTemp = "workTemp1"
+    changeColor(gridBtn, "#052854")
+    changeColor(tileBtn, "#063B7D")
+    localStorage.setItem("selectedOrganize", curOrganize)
+    localStorage.setItem("workTemp", workTemp)
+    workOrganize.clearWorkDiv()
+    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize)
+    // workOrganize = null
+    // console.log(workOrganize)
+    sortWork(curSort, workOrganize)
+}
+
+tileBtn.onclick = function() {
+    curOrganize = "Tile"
+    workTemp = "workTemp2"
+    changeColor(tileBtn, "#052854")
+    changeColor(gridBtn, "#063B7D")
+    localStorage.setItem("selectedOrganize", curOrganize)
+    localStorage.setItem("workTemp", workTemp)
+    // workOrganize = null
+    workOrganize.clearWorkDiv()
+    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize)
+    // workOrganize = null
+    // console.log(workOrganize)
+    sortWork(curSort, workOrganize)
+    // console.log(workOrganize)
+    // sortWork(curSort)
+}
+
 newBtn.onclick = function() {
     curSort = "newest"
     localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork")
-    sortWork(curSort)
+    sortWork("clearWork", workOrganize)
+    sortWork(curSort, workOrganize)
 }
 oldBtn.onclick = function() {
     curSort = "oldest"
     localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork")
-    sortWork(curSort)
+    sortWork("clearWork", workOrganize)
+    sortWork(curSort, workOrganize)
 }
 alphabetBtn.onclick = function() {
     curSort = "alphabetical"
     localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork")
-    sortWork(curSort)
+    sortWork("clearWork", workOrganize)
+    sortWork(curSort, workOrganize)
 }
 alphabetRevBtn.onclick = function() {
     curSort = "alphabeticalRev"
     localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork")
-    sortWork(curSort)
+    sortWork("clearWork", workOrganize)
+    sortWork(curSort, workOrganize)
 }

@@ -49,6 +49,7 @@
     justify-content: space-between;
     margin-top: 2.25rem;
 }
+
 /* Section 1 */
 .section .workGrid {
     width:22.5rem;
@@ -128,14 +129,102 @@
     width:100%;
     /* position: absolute; */
 }
-#sectionLine0 {
+#sectionTemp1 {
     display: none;
 }
-.sectionTemp1 {
+#sectionLine0 {
     display: none;
 }
 
 /* Section 2 */
-.section .workLinebyLine {
+
+.section .workTile {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.workTitle2, .workDesc2 {
+    color: var(--txt-color);
+    /* float: left; */
+    /* display: flex; */
+}
+.workImg2 img {
+    width: 250px;
+    max-height:135px;
+    object-fit: cover;
+    border-radius: 1.75rem 1.75rem 0 0;
+    /* float: left; */
+}
+.workImg2 {
+    min-width: 220px;
+    /* display: flex; */
+}
+.workName2 {
+    max-width:45rem;
+    margin-left:24px;
+    margin-bottom: 5px;
+}
+.workTitle2 {
+    font-family:MontseEXTRABOLD;
+    /* font-weight: 700; */
+    letter-spacing: 0.1rem;
+    font-size:1.5rem;
+}
+.workDesc2 {
+    /* margin-top:0.5rem; */
+    letter-spacing: 0.05rem;
+    margin-left:24px;
+    /* width:100%; */
+    
+}
+.workDesc2 span{
+    font-style: italic;
+}
+.workButton2 {
+    display: block;
+    justify-content: space-between;
+    width:130px;
+    /* height:10rem; */
+}
+.workButton2 button {
+    margin: 7.5px 0;
+    height: 2rem;
+    border:none;
+    width:98%;
+    /* padding:0 1rem; */
+    font-size: 0.87rem;
+    border-radius: 0.6rem 0.6rem 0 0;
+}
+.workButton2 button:nth-child(1) {
+    background-color: #063B7D;
+    color: #E9F2FF;
+}
+.workButton2 button:nth-child(2), .workButton2 button:nth-child(3) {
+    background-color: #4A627F;
+    color:#D3E5FF;
+}
+.workButton2 img {
+    width:1.2rem;
+    margin-top:-0.2rem;
+}
+.workButton2 button:nth-child(2) img{
+    width:1.1rem;
+    margin-top:-0.2rem;
+}
+.workButton2 span {
+    margin-left:0.45rem;
+    font-family: MulishREG;
+    letter-spacing: 0.02rem;
+    font-weight: 100;
+}
+.workLBLLeft {
+    display: flex;
+    float:left;
+}
+.workLBLRight {
+    display: block;
+    /* float:right; */
+}
+#sectionTemp2 {
+    display: none;
 }

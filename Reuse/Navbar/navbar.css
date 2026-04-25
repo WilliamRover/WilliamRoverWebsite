@@ -53,6 +53,8 @@ body {
 }
 * {
     box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 
 .navbar {
@@ -240,6 +242,7 @@ body {
     .right-side {
         width: 100%;
         justify-content: space-between;
+        margin: 0 auto;
     }
 
     .buttons a {
@@ -250,5 +253,6 @@ body {
     .search {
         width: 100%;
         max-width: none;
+        margin: 0 auto;
     }
 }

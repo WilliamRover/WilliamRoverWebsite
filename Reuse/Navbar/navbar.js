@@ -105,7 +105,7 @@ function switchTheme(bgColor, txtColor, lanShadow, ldFloat, ldColor, lanHover, s
     r.style.setProperty('--float-ld', ldFloat);
     r.style.setProperty('--ld-color', ldColor);
     r.style.setProperty('--lan-hover', lanHover);
-    // ldStatus.innerHTML = status;\
+    // ldStatus.innerHTML = status;
     switchLanLight(curLan, statusIndex)
 }
 function themeBool(l = true) {
@@ -117,20 +117,29 @@ function themeBool(l = true) {
         // location.href='#dark';
     }
 }
-var light
-import {checkTime} from "../../Reuse/shared.js";
-if (checkTime()) {
-    light = true
-    r.style.setProperty('--light', light);
-    themeBool();
-} else if (checkTime() == false) {
+var light = localStorage.getItem("light") || true
+r.style.setProperty('--light', light);
+if (light == "false") {
     light = false
-    r.style.setProperty('--light', light);
-    themeBool(false);
 }
+r.style.setProperty('--light', light);
+console.log(light)
+themeBool(light);
+// import {checkTime} from "../../Reuse/shared.js";
+// if (checkTime()) {
+//     light = true
+//     r.style.setProperty('--light', light);
+//     themeBool();
+// } else if (checkTime() == false) {
+//     light = false
+//     r.style.setProperty('--light', light);
+//     themeBool(false);
+// }
 
 lida.onclick = function() {
     light = !light;
+    localStorage.setItem("light", light)
+    console.log(light)
     themeBool(light);
     r.style.setProperty('--light', light);
     if (light) {

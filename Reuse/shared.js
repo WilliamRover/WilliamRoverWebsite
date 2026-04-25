@@ -35,14 +35,14 @@ export class Sort {
     #key;
     #sectionIndex = 0
     ready
-    constructor(filePath, WorkTempName, sortMode) {
+    constructor(filePath, WorkTempName, sortMode, keyArr) {
         this.ready = fetch(filePath).then(response => {
         return response.json();
         }).then(file => {
             this.file = file
             this.fileLen = Object.keys(file).length
         })
-        this.#key = [".thumbnail", ".fileName", ".author", ".dateCreated", ".yearCreated", ".type.generalType"]
+        this.#key = keyArr
         this.WorkTempName = WorkTempName
         this.sortMode = sortMode
         // this.sectionTempName = sectionTempName

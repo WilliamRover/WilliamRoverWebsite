@@ -54,7 +54,8 @@ var curSort = localStorage.getItem("selectedSort") || "newest"
 var curOrganize = localStorage.getItem("selectedOrganize") || "Grid"
 
 var workTemp = localStorage.getItem("workTemp") || "workTemp1"
-var workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize)
+var keyArr = [".thumbnail", ".fileName", ".author", ".dateCreated", ".yearCreated", ".type.generalType"]
+var workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize, keyArr)
 // // console.log(curSort)
 var prevBtn;
 sortWork(curSort, workOrganize)

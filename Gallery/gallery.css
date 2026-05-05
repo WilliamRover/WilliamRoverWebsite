@@ -15,6 +15,12 @@
     border-bottom: 0.1rem solid var(--txt-color);
     margin-top:3.5rem;
 }
+.sort button {
+    height:1.9rem;
+    background-color: #063B7D;
+    border: 0.05rem solid var(--txt-color);
+    color:#E9F2FF;
+}
 .sort1 {
     float:right;
     margin-right:0.5rem;
@@ -25,18 +31,12 @@
     margin-left:0.5rem;
     display: flex;
 }
-.sort button {
-    height:1.9rem;
-    background-color: #063B7D;
-    border: 0.05rem solid var(--txt-color);
-}
 
 .sort1 img {
     margin:0.2rem 0.75rem;
     height:0.85rem;
 }
 .sort2 span {
-    color:#E9F2FF;
     margin:1.25rem 0.75rem;
     font-size: 0.9rem;
     letter-spacing: 0.05rem;
@@ -233,3 +233,9 @@
 #sectionTemp2 {
     display: none;
 }
+
+@media (max-width: 768px) {
+  
+
+}
+

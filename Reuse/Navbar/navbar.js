@@ -49,10 +49,10 @@ lan2Btn.onclick = function() {
     checkSwitchPos(curLan, 2)
 }
 
-function switchLanBtn(key) {
-    fetch(`../lang/${key}.json`).then(response => {
-        return response.json();
-    }).then(file => {
+async function switchLanBtn(key) {
+    try {
+        const response = await fetch(`../lang/${key}.json`);
+        const file = await response.json();
         let lanPos = file["navbar"]["lan"]
         // Lan img
         var lanImgArr = document.getElementsByClassName("flagImg")
@@ -73,8 +73,37 @@ function switchLanBtn(key) {
             switchLanLight(curLan, 1)
         }
         console.log(curLan)
-        translateData(curLan)
-    })
+        translateData(file)
+    } catch (error) {
+        console.error("Language loading failed:", error);
+    }
+
+
+    // fetch(`../lang/${key}.json`).then(response => {
+    //     return response.json();
+    // }).then(file => {
+    //     let lanPos = file["navbar"]["lan"]
+    //     // Lan img
+    //     var lanImgArr = document.getElementsByClassName("flagImg")
+    //     // Lan span
+    //     var lanSpanArr = document.getElementsByClassName("lanSpan")
+    //     for (let i = 0; i < lanImgArr.length; i++) {
+    //         lanImgArr[i].src = lanPos[i]["innerImg"]
+    //         lanSpanArr[i].innerHTML = lanPos[i]["innerSpan"]
+    //     }
+    //     var search = document.getElementById("search")
+    //     search.placeholder = file["navbar"]["search"]
+    //     r.style.setProperty('--cur-lan', lanPos[0]["lang"]);
+    //     curLan = window.getComputedStyle(document.body).getPropertyValue('--cur-lan');
+    //     localStorage.setItem('selectedLanguage', curLan);
+    //     if (light) {
+    //         switchLanLight(curLan, 0)
+    //     } else {
+    //         switchLanLight(curLan, 1)
+    //     }
+    //     console.log(curLan)
+    //     translateData(curLan)
+    // })
 }
 
 function checkSwitchPos(key, pos) {

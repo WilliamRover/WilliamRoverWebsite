@@ -1,11 +1,11 @@
 import {loadFile} from "../Reuse/shared.js";
 // Load navbar
 loadFile("../Reuse/Navbar/navbar.html", "navbar");
-var banner = document.getElementById("banner")
 // Load footer
 loadFile("../Reuse/Footer/footer.html", "footer");
 // Main
 // import {checkTime} from "../Reuse/shared.js";
+var banner = document.getElementById("banner")
 var light = localStorage.getItem("light")
 console.log(light)
 if (light == "true") {

@@ -1,0 +1,22 @@
+:root {
+    --bg-color: #E9F2FF;
+    --txt-color: #132235;
+    --mainBlue-color:#063B7D;
+    --mainBlue-hover-color:#052854;
+    --cur-lan: #flagEng;
+    --lan-show:none;
+    --lan-shadow:#13223526;
+    --lan-hover:#c5ccd5;
+    --light:true;
+    --float-ld: left;
+    --ld-color:#F7C215;
+    --cur-lan:en;
+    /* --nav-height:0px; */
+}
+/* Background */
+.bg-primary {
+    background-color: var(--mainBlue-color);
+    color:var(--bg-color);
+}
+
+/* Text */

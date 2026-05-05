@@ -32,7 +32,7 @@ function getNested(obj, path) {
 
 
 export class Sort {
-    #key;
+    #key
     #sectionIndex = 0
     ready
     constructor(filePath, WorkTempName, sortMode, keyArr) {
@@ -164,3 +164,4 @@ export class Sort {
         this.#sectionIndex = 0
     }
 }
+

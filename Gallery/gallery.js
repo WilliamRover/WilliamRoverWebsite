@@ -87,7 +87,7 @@ gridBtn.onclick = function() {
     localStorage.setItem("selectedOrganize", curOrganize)
     localStorage.setItem("workTemp", workTemp)
     workOrganize.clearWorkDiv()
-    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize)
+    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize, keyArr)
     // workOrganize = null
     // console.log(workOrganize)
     sortWork(curSort, workOrganize)
@@ -102,7 +102,7 @@ tileBtn.onclick = function() {
     localStorage.setItem("workTemp", workTemp)
     // workOrganize = null
     workOrganize.clearWorkDiv()
-    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize)
+    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize, keyArr)
     // workOrganize = null
     // console.log(workOrganize)
     sortWork(curSort, workOrganize)

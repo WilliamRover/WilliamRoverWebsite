@@ -23,7 +23,9 @@
                 "lang": "vn"
             }
         ],
-        "theme": ["Valo tila", "Tumma tila"]
+        "theme": ["Valo tila", "Tumma tila"],
+        "clipboard": "Kopioitu leikepöydälle!",
+        "download": "Ladataan tiedostoa"
     },
 
     "footer": {

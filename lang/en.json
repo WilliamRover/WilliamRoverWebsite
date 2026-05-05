@@ -23,9 +23,11 @@
                 "lang": "vn"
             }
         ],
-        "theme": ["Light mode", "Dark mode"]
+        "theme": ["Light mode", "Dark mode"],
+        "clipboard": "Copied to clipboard!",
+        "download": "Downloading file"
     },
-
+    
     "footer": {
         "desc": "Nothing to see here :P"
     },

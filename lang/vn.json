@@ -23,7 +23,9 @@
                 "lang": "en"
             }
         ],
-        "theme": ["Nền sáng", "Nền tối"]
+        "theme": ["Nền sáng", "Nền tối"],
+        "clipboard": "Đã sao chép vào bảng nhớ tạm!",
+        "download": "Đang tải file"
     },
 
     "footer": {

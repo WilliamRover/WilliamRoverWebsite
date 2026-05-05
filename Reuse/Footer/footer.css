@@ -7,10 +7,11 @@
     /* position: absolute; */
     width:100%;
     background-color: #063B7D;
-    display:flex;
-    flex-wrap: wrap;
+    display:grid;
+    justify-items: center;
+    /* flex-wrap: nowrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
     padding: 0.5rem 2rem;
     flex-wrap: wrap;
     position:sticky;
@@ -18,7 +19,7 @@
     z-index: 10;
     margin-top:7.5%;
 }
-.footer .nothing {
+.footer .nothing, .footer .copyRight {
     margin-top:1%;
     /* top: 100%; */
     /* transform: translateY(-45%); */
@@ -28,4 +29,9 @@
     font-size:1rem;
     color: #E9F2FF;
 
+}
+
+.footer .copyRight {
+    font-size: 0.87rem;
+    opacity: 0.8;
 }

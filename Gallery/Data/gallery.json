@@ -12,7 +12,8 @@
         "dimension": "1440 x 1037",
         "fileSize": "60.4 KB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/1 - 1st digital picture.jpg"
+        "thumbnail": "./Data/work/thumbnail/1 - 1st digital picture.jpg",
+        "downloadPath": "./Data/work/1 - 1st digital picture.jpg"
     },
     {
         "fileNum": 2,
@@ -27,7 +28,8 @@
         "dimension": "2048 x 2048",
         "fileSize": "226 KB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/2 - Animator in sunset.jpg"
+        "thumbnail": "./Data/work/thumbnail/2 - Animator in sunset.jpg",
+        "downloadPath": "./Data/work/2 - Animator in sunset.jpg"
     },
     {
         "fileNum": 3,
@@ -42,7 +44,8 @@
         "dimension": "1200 x 800",
         "fileSize": "3.57 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/3 - Glowing deer found by a hunter.png"
+        "thumbnail": "./Data/work/thumbnail/3 - Glowing deer found by a hunter.png",
+        "downloadPath": "./Data/work/3 - Glowing deer found by a hunter.png"
     },
     {
         "fileNum": 4,
@@ -57,7 +60,8 @@
         "dimension": "1200 x 800",
         "fileSize": "3.80 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/4 - Couple walking in winter forest.png"
+        "thumbnail": "./Data/work/thumbnail/4 - Couple walking in winter forest.png",
+        "downloadPath": "./Data/work/4 - Couple walking in winter forest.png"
     },
     {
         "fileNum": 5,
@@ -72,7 +76,8 @@
         "dimension": "1200 x 800",
         "fileSize": "4.68 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/5 - A couple kiss.png"
+        "thumbnail": "./Data/work/thumbnail/5 - A couple kiss.png",
+        "downloadPath": "./Data/work/5 - A couple kiss.png"
     },
     {
         "fileNum": 6,
@@ -87,7 +92,8 @@
         "dimension": "1200 x 800",
         "fileSize": "3.79 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/6 - Night winter nature.png"
+        "thumbnail": "./Data/work/thumbnail/6 - Night winter nature.png",
+        "downloadPath": "./Data/work/6 - Night winter nature.png"
     },
     {
         "fileNum": 7,
@@ -102,7 +108,8 @@
         "dimension": "1200 x 600",
         "fileSize": "92.5 KB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/7 - Inspiration by Bich Nguyen.jpg"
+        "thumbnail": "./Data/work/thumbnail/7 - Inspiration by Bich Nguyen.jpg",
+        "downloadPath": "./Data/work/7 - Inspiration by Bich Nguyen.jpg"
     },
     {
         "fileNum": 8,
@@ -117,7 +124,8 @@
         "dimension": "1200 x 600",
         "fileSize": "120 KB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/8 - Playing guitar on a beach.PNG"
+        "thumbnail": "./Data/work/thumbnail/8 - Playing guitar on a beach.PNG",
+        "downloadPath": "./Data/work/8 - Playing guitar on a beach.PNG"
     },
     {
         "fileNum": 9,
@@ -132,7 +140,8 @@
         "dimension": "1200 x 800",
         "fileSize": "15.8 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/9 - An artist in rainy street.png"
+        "thumbnail": "./Data/work/thumbnail/9 - An artist in rainy street.png",
+        "downloadPath": "./Data/work/9 - An artist in rainy street.png"
     },
     {
         "fileNum": 10,
@@ -147,7 +156,8 @@
         "dimension": "1200 x 800",
         "fileSize": "997 KB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/10 - Lest we forget.png"
+        "thumbnail": "./Data/work/thumbnail/10 - Lest we forget.png",
+        "downloadPath": "./Data/work/10 - Lest we forget.png"
     },
     {
         "fileNum": 11,
@@ -162,7 +172,8 @@
         "dimension": "1200 x 800",
         "fileSize": "7.35 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/11 - Couple huging in black starry night.png"
+        "thumbnail": "./Data/work/thumbnail/11 - Couple huging in black starry night.png",
+        "downloadPath": "./Data/work/11 - Couple huging in black starry night.png"
     },
     {
         "fileNum": 12,
@@ -177,7 +188,8 @@
         "dimension": "1200 x 800",
         "fileSize": "7.76 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/12 - The warmth of love in the cold winter.png"
+        "thumbnail": "./Data/work/thumbnail/12 - The warmth of love in the cold winter.png",
+        "downloadPath": "./Data/work/12 - The warmth of love in the cold winter.png"
     },
     {
         "fileNum": 13,
@@ -192,7 +204,8 @@
         "dimension": "1200 x 800",
         "fileSize": "8.21 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/13 - Alone in the plain.png"
+        "thumbnail": "./Data/work/thumbnail/13 - Alone in the plain.png",
+        "downloadPath": "./Data/work/13 - Alone in the plain.png"
     },
     {
         "fileNum": 14,
@@ -207,7 +220,8 @@
         "dimension": "1200 x 800",
         "fileSize": "7.42 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/14 - Bài cuối môn DI.png"
+        "thumbnail": "./Data/work/thumbnail/14 - Bài cuối môn DI.png",
+        "downloadPath": "./Data/work/14 - Bài cuối môn DI.png"
     },
     {
         "fileNum": 15,
@@ -222,7 +236,8 @@
         "dimension": "1200 x 800",
         "fileSize": "953 KB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/15 - Happy new painful year.png"
+        "thumbnail": "./Data/work/thumbnail/15 - Happy new painful year.png",
+        "downloadPath": "./Data/work/15 - Happy new painful year.png"
     },
     {
         "fileNum": 16,
@@ -237,7 +252,8 @@
         "dimension": "1200 x 800",
         "fileSize": "17.9 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/16 - Knight of the sky.png"
+        "thumbnail": "./Data/work/thumbnail/16 - Knight of the sky.png",
+        "downloadPath": "./Data/work/16 - Knight of the sky.mp4"
     },
     {
         "fileNum": 17,
@@ -252,7 +268,8 @@
         "dimension": "1920 x 1080",
         "fileSize": "115 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/17 - Winter is coming.png"
+        "thumbnail": "./Data/work/thumbnail/17 - Winter is coming.png",
+        "downloadPath": "./Data/work/17 - Winter is coming.zip"
     },
     {
         "fileNum": 18,
@@ -267,7 +284,8 @@
         "dimension": "1920 x 1080",
         "fileSize": "139 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/18 - West Point rural, South Sodotka.png"
+        "thumbnail": "./Data/work/thumbnail/18 - West Point rural, South Sodotka.png",
+        "downloadPath": "./Data/work/18 - West Point rural, South Sodotka.zip"
     },
     {
         "fileNum": 19,
@@ -282,7 +300,8 @@
         "dimension": "1920 x 1080",
         "fileSize": "96.4 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/19 - Vapausville rural, North Sodotka.png"
+        "thumbnail": "./Data/work/thumbnail/19 - Vapausville rural, North Sodotka.png",
+        "downloadPath": "./Data/work/19 - Vapausville rural, North Sodotka.zip"
     },
     {
         "fileNum": 20,
@@ -297,7 +316,8 @@
         "dimension": "1920 x 1080",
         "fileSize": "54 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/20 - Woliam city, Mylanisa.png"
+        "thumbnail": "./Data/work/thumbnail/20 - Woliam city, Mylanisa.png",
+        "downloadPath": "./Data/work/20 - Woliam city, Mylanisa.zip"
     },
     {
         "fileNum": 21,
@@ -312,6 +332,7 @@
         "dimension": "1920 x 1080",
         "fileSize": "25.9 MB",
         "download": true,
-        "thumbnail": "./Data/work/thumbnail/21 - Forgot her glove lol.png"
+        "thumbnail": "./Data/work/thumbnail/21 - Forgot her glove lol.png",
+        "downloadPath": "./Data/work/21 - Forgot her glove lol.png"
     }
 ]

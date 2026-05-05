@@ -52,7 +52,10 @@
             "info": {
                 "author": "Tác giả: ",
                 "dateCreated": "Ngày tạo: ",
-                "type": "Loại: "
+                "type": "Loại: ",
+                "fileType": "Định dạng: ",
+                "size": "Kích thước: ",
+                "dimensions": "Độ phân giải: "
             },
             "function": {
                 "view": "Xem tác phẩm",

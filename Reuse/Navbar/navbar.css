@@ -40,6 +40,12 @@ body {
     margin:0;
     padding:0;
 }
+.midpage {
+    width: 75rem;
+    margin: 0 auto;
+    /* font-family: MulishSEMIBOLD; */
+    margin-top:3.5rem;
+}
 
 .navbar {
   width:100%;
@@ -214,6 +220,32 @@ body {
 .line2 span {
   font-weight: 100;
   color: #E9F2FF;
+}
+
+/* Clipboard */
+.overlay {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 0.6rem;
+    z-index: 100;
+    box-shadow: 0 0.8rem 1.6rem var(--lan-shadow);
+
+    opacity: 0;
+    visibility: hidden;
+    /* transform: translateY(25); */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* transform: translateY(0); */
 }
 
 @media (max-width: 768px) {

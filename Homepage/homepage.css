@@ -86,10 +86,7 @@
 }
 
 /* Mid page */
-.midpage {
-  width: 72%;
-  margin: 0 auto;
-}
+
 .feature {
   display:flex;
   flex-wrap: wrap;

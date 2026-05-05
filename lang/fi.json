@@ -52,7 +52,10 @@
             "info": {
                 "author": "Kirjoittaja: ",
                 "dateCreated": "Luontipäivämäärä: ",
-                "type": "Tyyppi: "
+                "type": "Tyyppi: ",
+                "fileType": "Tiedostotyyppi: ",
+                "size": "Tiedostokoko: ",
+                "dimensions": "Mitat: "
             },
             "function": {
                 "view": "Näytä työ",

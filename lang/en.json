@@ -52,7 +52,10 @@
             "info": {
                 "author": "Author: ",
                 "dateCreated": "Date created: ",
-                "type": "Type: "
+                "type": "Type: ",
+                "fileType": "File type: ",
+                "dimensions": "Dimensions: ",
+                "size": "Size: "
             },
             "function": {
                 "view": "View work",

@@ -68,9 +68,9 @@ async function switchLanBtn(key) {
         curLan = window.getComputedStyle(document.body).getPropertyValue('--cur-lan');
         localStorage.setItem('selectedLanguage', curLan);
         if (light) {
-            switchLanLight(file, 0)
+            switchLanLight(curLan, 0)
         } else {
-            switchLanLight(file, 1)
+            switchLanLight(curLan, 1)
         }
         console.log(curLan)
         translateData(curLan)
@@ -119,11 +119,14 @@ function checkSwitchPos(key, pos) {
 var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
 
-function switchLanLight(file, statusIndex) {
-    const lightStat = file.navbar.theme[statusIndex];
-    ldStatus.innerHTML = lightStat;
+function switchLanLight(key, statusIndex) {
+    fetch(`../lang/${key}.json`).then(response => {
+        return response.json();
+    }).then(file => {
+        let lightStat = file["navbar"]["theme"][statusIndex]
+        ldStatus.innerHTML = lightStat
+    })
 }
-
 function switchTheme(bgColor, txtColor, lanShadow, ldFloat, ldColor, lanHover, statusIndex) {
     r.style.setProperty('--bg-color', bgColor);
     r.style.setProperty('--txt-color', txtColor);

@@ -35,7 +35,8 @@ export class Sort {
     #key
     #sectionIndex = 0
     ready
-    constructor(filePath, WorkTempName, sortMode, keyArr) {
+    #predefinedId
+    constructor(filePath, WorkTempName="", sortMode="", predefinedId="", keyArr) {
         this.ready = fetch(filePath).then(response => {
         return response.json();
         }).then(file => {
@@ -45,6 +46,7 @@ export class Sort {
         this.#key = keyArr
         this.WorkTempName = WorkTempName
         this.sortMode = sortMode
+        this.#predefinedId = predefinedId
         // this.sectionTempName = sectionTempName
     }
     
@@ -59,30 +61,71 @@ export class Sort {
         document.getElementById("section".concat(sectionIndex)).appendChild(div)
     }
 
-    #assignInfo() {
+    assignInfo(idx="") {
+        if (idx !== "") {
+            this.#bindData(idx)
+            return
+        }
         for (let i = 0; i < this.fileLen; i++) {
-            for (let j = 0; j < this.#key.length; j++) {
-                if (j == 5) {
-                    var access = document.querySelector(`#work${i} .type\\.generalType`)
-                } else {
-                    var access = document.querySelector(`#work${i} ${this.#key[j]}`)
-                }
-                var res = getNested(this.file[i], this.#key[j].replace('.', ''))
-                
-                if (j == 3 || j == 5) {
-                    var curLan = localStorage.getItem('selectedLanguage') || 'en';
-                    access.setAttribute("idLan", res)
-                    translateData(curLan)
-                }
-                if (j == 4) {
-                    res = ' '.concat(res)
-                }
-                if (j == 0) {
-                    access.src = res
-                    continue
-                }
-                access.innerHTML = res
+            this.#bindData(i)
+        }
+        var curLan = localStorage.getItem('selectedLanguage') || 'en';
+        // access.setAttribute("idLan", res)
+        translateData(curLan)
+    }
+
+    #bindData(idx) {
+        for (let j = 0; j < this.#key.length; j++) {
+            // if (j == 5) {
+            //     var access = document.querySelector(`#work${i} .type\\.generalType`)
+            // } else {
+            //     var access = document.querySelector(`#work${i} ${this.#key[j]}`)
+            // }
+            // var res = getNested(this.file[i], this.#key[j].replace('.', ''))
+            
+            // if (j == 3 || j == 5) {
+            //     var curLan = localStorage.getItem('selectedLanguage') || 'en';
+            //     access.setAttribute("idLan", res)
+            //     translateData(curLan)
+            // }
+            // if (j == 4) {
+            //     res = ' '.concat(res)
+            // }
+            // if (j == 0) {
+            //     access.src = res
+            //     continue
+            // }
+            // access.innerHTML = res
+            var config = this.#key[j]
+            if (this.#predefinedId == "") {
+                var access = document.querySelector(`${config["selector"]}`)
+            } else {
+                var access = document.querySelector(`${this.#predefinedId + idx + " "}${config["selector"]}`)
             }
+            if (!access) {
+                continue
+            }
+            // console.log(j)
+            var res = getNested(this.file[idx], config["key"])
+            // console.log(res)
+
+            // console.log(res)
+            if (config["translate"]) {
+                access.setAttribute("idLan", res)
+                continue
+            }
+
+            if (config["type"] == "img") {
+                access.src = res
+                continue
+            }
+
+            if (config["prefix"]) {
+                access.innerHTML = config["prefix"].concat(res)
+                continue
+            }
+
+            access.innerHTML = res
         }
     }
     // In the JSON, the order is already listed from oldest to newest
@@ -107,7 +150,7 @@ export class Sort {
             }
             this.#addToSection(Arr[i], sectionIndex)
         }
-        this.#assignInfo()
+        this.assignInfo()
         this.#sectionIndex = sectionIndex
         console.log(this.#sectionIndex)
     }

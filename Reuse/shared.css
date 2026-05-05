@@ -13,10 +13,3 @@
     --cur-lan:en;
     /* --nav-height:0px; */
 }
-/* Background */
-.bg-primary {
-    background-color: var(--mainBlue-color);
-    color:var(--bg-color);
-}
-
-/* Text */

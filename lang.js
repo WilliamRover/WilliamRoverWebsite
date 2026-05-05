@@ -17,33 +17,22 @@
 //   }
 // }
 function getNested(obj, path) {
+    // console.log("getNested is called")
     return path.split('.').reduce((o, k) => o?.[k], obj);
 }
 // Only apply to innerHTML
-// export function translateData(lan) {
-//   fetch(`../lang/${lan}.json`).then(response => {
-//     return response.json();
-//   }).then(file => {
-//     // DO THINGS HERE
-//     let a = document.querySelectorAll("[idLan]")
-//     for (let i = 0; i < a.length; i++) {
-//       var b = a[i].getAttribute("idLan")
-//       var res = getNested(file, b)
-//       a[i].innerHTML = res
-//       // console.log(res)
-//       // printNested(file[pageName])
-//     }
-//   })
-// }
-export function translateData(file) {
-  const elements = document.querySelectorAll("[idLan]");
-
-  elements.forEach(el => {
-    const key = el.getAttribute("idLan");
-    const res = getNested(file, key);
-
-    if (res !== undefined) {
-      el.innerHTML = res;
+export function translateData(lan) {
+  fetch(`../lang/${lan}.json`).then(response => {
+    return response.json();
+  }).then(file => {
+    // DO THINGS HERE
+    let a = document.querySelectorAll("[idLan]")
+    for (let i = 0; i < a.length; i++) {
+      var b = a[i].getAttribute("idLan")
+      var res = getNested(file, b)
+      a[i].innerHTML = res
+      // console.log(res)
+      // printNested(file[pageName])
     }
-  });
+  })
 }

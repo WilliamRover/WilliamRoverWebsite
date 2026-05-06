@@ -63,7 +63,7 @@ var keyArr = [
   { selector: ".yearCreated", key: "yearCreated", prefix: " " },
   { selector: ".type.generalType", key: "type.generalType", translate: true }
 ];
-var workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
+var workOrganize = new Sort(`../../data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
 // // console.log(curSort)
 var prevBtn;
 sortWork(curSort, workOrganize)
@@ -98,7 +98,7 @@ gridBtn.onclick = function() {
     localStorage.setItem("selectedOrganize", curOrganize)
     localStorage.setItem("workTemp", workTemp)
     workOrganize.clearWorkDiv()
-    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
+    workOrganize = new Sort(`../../data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
     // workOrganize = null
     // console.log(workOrganize)
     sortWork(curSort, workOrganize)
@@ -116,7 +116,7 @@ tileBtn.onclick = function() {
     localStorage.setItem("workTemp", workTemp)
     // workOrganize = null
     workOrganize.clearWorkDiv()
-    workOrganize = new Sort(`./Data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
+    workOrganize = new Sort(`../../data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
     // workOrganize = null
     // console.log(workOrganize)
     sortWork(curSort, workOrganize)
@@ -181,7 +181,7 @@ document.addEventListener("click", async (e) => {
     const work = e.target.closest('[id^="work"]')
     var id = parseInt(work.id.replace("work", ""))
 
-    const file = await fetch(`./Data/gallery.json`)
+    const file = await fetch(`../../data/gallery.json`)
     const res = await file.json()
     const link = res[id]["downloadPath"]
     showClipboardOverlay(1);

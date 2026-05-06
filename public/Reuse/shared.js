@@ -116,7 +116,8 @@ export class Sort {
             }
 
             if (config["type"] == "img") {
-                access.src = res
+                access.src = window.location.origin + '/' +res
+                // console.log(res)
                 continue
             }
 

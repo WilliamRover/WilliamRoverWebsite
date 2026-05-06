@@ -19,7 +19,7 @@ var keyArr = [
   { selector: ".dimension", key: "dimension" },
   { selector: ".fileSize", key: "fileSize" }
 ];
-var bindData = new Sort(`../../data/gallery.json`, "", "", "", keyArr)
+var bindData = new Sort(`${window.location.origin}/data/gallery.json`, "", "", "", keyArr)
 bindData.ready.then(() => {
     console.log(filenum)
     console.log(bindData)

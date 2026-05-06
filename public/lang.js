@@ -37,7 +37,7 @@ function getNested(obj, path) {
 // }
 export async function translateData(lan) {
   try {
-    const response = await fetch(`${window.location.origin}/data/lang/${lan}.json`);
+    const response = await fetch(`data/lang/${lan}.json`);
     const file = await response.json();
 
     const elements = document.querySelectorAll("[idLan]");

@@ -51,7 +51,7 @@ lan2Btn.onclick = function() {
 
 async function switchLanBtn(key) {
     try {
-        const response = await fetch(`${window.location.origin}/data/lang/${key}.json`);
+        const response = await fetch(`data/lang/${key}.json`);
         const file = await response.json();
         let lanPos = file["navbar"]["lan"]
         // Lan img
@@ -107,7 +107,7 @@ async function switchLanBtn(key) {
 }
 
 function checkSwitchPos(key, pos) {
-    fetch(`${window.location.origin}/data/lang/${key}.json`).then(response => {
+    fetch(`data/lang/${key}.json`).then(response => {
         return response.json();
     }).then(file => {
         var lang = file["navbar"]["lan"]
@@ -121,7 +121,7 @@ var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
 
 function switchLanLight(key, statusIndex) {
-    fetch(`${window.location.origin}/data/lang/${key}.json`).then(response => {
+    fetch(`data/lang/${key}.json`).then(response => {
         return response.json();
     }).then(file => {
         let lightStat = file["navbar"]["theme"][statusIndex]

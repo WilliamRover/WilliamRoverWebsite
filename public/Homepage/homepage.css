@@ -86,8 +86,10 @@
 }
 
 /* Mid page */
-
-.feature {
+.midpage {
+  width: 75%;
+}
+.midpage .feature {
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -230,13 +232,14 @@
   .info {
     margin: 0 auto;
   }
-  .feature {
-        flex-direction: column;
-        gap: 5rem;
-        margin-top: 3rem;
+  .midpage .feature {
+      width: 100%;
+      flex-direction: column;
+      gap: 5rem;
+      margin-top: 3rem;
     }
   .category {
-        width: 85%; /* Full width on extra small screens */
+        width: 85%;
         margin:0 auto;
         /* height: 18rem; */
   }

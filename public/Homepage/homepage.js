@@ -9,16 +9,16 @@ var banner = document.getElementById("banner")
 var light = localStorage.getItem("light")
 console.log(light)
 if (light == "true") {
-    banner.innerHTML = "<img src=\".\\img\\bannerLight.png\">"
+    banner.innerHTML = "<img src=\".\\img\\bannerLight.webp\">"
 } else if (light == "false") {
-    banner.innerHTML = "<img src=\".\\img\\bannerDark.png\">"
+    banner.innerHTML = "<img src=\".\\img\\bannerDark.webp\">"
 }
 
 window.onclick = function() {
     var light = window.getComputedStyle(document.body).getPropertyValue('--light');
     if (light == "true") {
-        banner.innerHTML = "<img src=\".\\img\\bannerLight.png\">"
+        banner.innerHTML = "<img src=\".\\img\\bannerLight.webp\">"
     } else if (light == "false") {
-        banner.innerHTML = "<img src=\".\\img\\bannerDark.png\">"
+        banner.innerHTML = "<img src=\".\\img\\bannerDark.webp\">"
     }
 }

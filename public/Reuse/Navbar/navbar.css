@@ -122,67 +122,80 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+/* Language */
 .lan {
-  position: relative;
-  display: inline-block;
-  font-size:1rem;
+    position: relative;
+    display: inline-block;
+    font-size:1rem;
+    align-items: center;
 }
+
+#lanButton {
+    gap: 6px;
+}
+
 .lan img {
-  width:2rem;
+    width:2rem;
 }
-.lanbtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #E9F2FF;
-  display: flex;
-  align-items: center;
+
+.lan #lanList {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    cursor: pointer;
+    width: 11rem;
+    margin-top: 0.5rem;
+    background: var(--bg-color);
+    border-radius: 0.8rem;
+    /* border: 1px solid; */
+    padding: 0;
+    color: var(--txt-color);
+    box-shadow: 0 0.8rem 1.6rem var(--lan-shadow);
 }
-.dropdown-list {
-  display: var(--lan-show);
-  position: absolute;
-  margin-top: 0.75rem;
-  background: var(--bg-color);
-  border-radius: 0.6rem;
-  width: 11rem;
-  /* height:5rem; */
-  box-shadow: 0 0.8rem 1.6rem var(--lan-shadow);
-  /* padding: 0.5rem 0; */
-  z-index: 20;
+
+#lanList.active {
+    display: block;
 }
-.dropdown-list button {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  border-radius: 0.6rem;
+
+#lanList li {
+    /* background-color: var(--bg-color); */
+    height: 2.5rem;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding-left: 1.5rem;
+    /* border: 0.05rem solid var(--txt-color); */
 }
-.dropdown-list #lanButtonTop {
-  border-radius: 0.6rem 0.6rem 0px 0px;
+
+#lanList li:hover {
+    background-color: var(--lan-hover);
 }
-.dropdown-list #lanButtonBottom {
-  border-radius: 0px 0px 0.6rem 0.6rem;
+
+#lanList li:nth-child(1) {
+    border-radius: 0.8rem 0.8rem 0 0;
 }
-.dropdown-list button:hover{
-  background-color: var(--lan-hover);
+
+#lanList li:last-child {
+    border-radius: 0 0 0.8rem 0.8rem;
 }
-.dropdown-list span {
-  color:var(--txt-color);
+
+#lanList li:not(:last-child) {
+    border-bottom: 0.1rem solid var(--lan-shadow);
 }
-.dropdown-list hr {
-  color:var(--txt-color);
-  margin:0px 0px;
+
+#lanList li span {
+    margin-left: 0.3rem;
 }
-.dropdown-list .flagDrop, hr {
-  display: block;
-  margin:10px 16px;
+
+#lanButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #E9F2FF;
+    display: flex;
+    align-items: center;
 }
-.flagImg {
-  margin-right: 0.521vw;
-}
-#curLan {
-  margin-right:0.3vw;
-}
+
 .right-side .line2 {
   color: #E9F2FF;
 }
@@ -222,7 +235,7 @@ body {
   color: #E9F2FF;
 }
 
-/* Clipboard */
+/* Overlay */
 .overlay {
     position: fixed;
     top: 85%;

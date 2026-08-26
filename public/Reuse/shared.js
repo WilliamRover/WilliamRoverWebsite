@@ -32,180 +32,128 @@ function getNested(obj, path) {
 
 
 export class Sort {
-    #key
-    #sectionIndex = 0
-    ready
-    #predefinedId
-    constructor(filePath, WorkTempName="", sortMode="", predefinedId="", keyArr) {
-        this.ready = fetch(filePath).then(response => {
-        return response.json();
-        }).then(file => {
-            this.file = file
-            this.fileLen = Object.keys(file).length
-        })
-        this.#key = keyArr
-        this.WorkTempName = WorkTempName
-        this.sortMode = sortMode
-        this.#predefinedId = predefinedId
-        // this.sectionTempName = sectionTempName
+    #keyArr;
+    #sectionIndex = 0;
+    #predefinedId;
+    file = [];
+    
+    constructor(workTempName = "", sortMode = "", predefinedId = "", keyArr) {
+        this.#keyArr = keyArr;
+        this.WorkTempName = workTempName;
+        this.sortMode = sortMode;
+        this.#predefinedId = predefinedId;
+    }
+
+    // Main rendering engine called externally by the API fetcher
+    renderData(data) {
+        this.clearWorkDiv();
+        this.file = data;
+        this.#assignAndCreateWorkDiv();
     }
     
     #addToSection(i, sectionIndex) {
-        var work = document.getElementById(this.WorkTempName)
-        let div = document.createElement("div")
-        div.id = "work".concat(i)
-        div.classList.add("work".concat(this.sortMode))
-        // console.log(div.id)
-        div.innerHTML = work.innerHTML
-        // console.log("section".concat(sectionIndex))
-        document.getElementById("section".concat(sectionIndex)).appendChild(div)
+        const workElem = document.getElementById(this.WorkTempName);
+        if (!workElem) return;
+
+        const item = this.file[i];
+        const div = document.createElement("div");
+        
+        div.id = `work${i}`;
+        // Store absolute ID so URL linking doesn't get messed up by the new sorting index
+        div.dataset.fileId = item.id ?? item.filenum ?? i; 
+        div.classList.add(`work${this.sortMode}`);
+        div.innerHTML = workElem.innerHTML;
+        
+        document.getElementById(`section${sectionIndex}`).appendChild(div);
     }
 
-    assignInfo(idx="") {
+    assignInfo(idx = "") {
         if (idx !== "") {
-            this.#bindData(idx)
-            return
+            this.#bindData(idx);
+            return;
         }
-        for (let i = 0; i < this.fileLen; i++) {
-            this.#bindData(i)
+        
+        for (let i = 0; i < this.file.length; i++) {
+            this.#bindData(i);
         }
-        var curLan = localStorage.getItem('selectedLanguage') || 'en';
-        // access.setAttribute("idLan", res)
-        translateData(curLan)
+        
+        const curLan = localStorage.getItem('selectedLanguage') || 'en';
+        if (typeof translateData === "function") {
+            translateData(curLan);
+        }
     }
 
     #bindData(idx) {
-        for (let j = 0; j < this.#key.length; j++) {
-            // if (j == 5) {
-            //     var access = document.querySelector(`#work${i} .type\\.generalType`)
-            // } else {
-            //     var access = document.querySelector(`#work${i} ${this.#key[j]}`)
-            // }
-            // var res = getNested(this.file[i], this.#key[j].replace('.', ''))
+        for (const config of this.#keyArr) {
+            const selector = this.#predefinedId === "" 
+                ? config.selector 
+                : `${this.#predefinedId}${idx} ${config.selector}`;
             
-            // if (j == 3 || j == 5) {
-            //     var curLan = localStorage.getItem('selectedLanguage') || 'en';
-            //     access.setAttribute("idLan", res)
-            //     translateData(curLan)
-            // }
-            // if (j == 4) {
-            //     res = ' '.concat(res)
-            // }
-            // if (j == 0) {
-            //     access.src = res
-            //     continue
-            // }
-            // access.innerHTML = res
-            var config = this.#key[j]
-            if (this.#predefinedId == "") {
-                var access = document.querySelector(`${config["selector"]}`)
+            const access = document.querySelector(selector);
+            if (!access) continue;
+
+            const res = getNested(this.file[idx], config.key);
+
+            if (config.translate) {
+                access.setAttribute("idLan", res);
+            } else if (config.type === "img") {
+                access.src = `${window.location.origin}/${res}`;
+            } else if (config.prefix) {
+                access.innerHTML = `${config.prefix}${res}`;
             } else {
-                var access = document.querySelector(`${this.#predefinedId + idx + " "}${config["selector"]}`)
+                access.innerHTML = res;
             }
-            if (!access) {
-                continue
-            }
-            // console.log(j)
-            var res = getNested(this.file[idx], config["key"])
-            // console.log(res)
-
-            // console.log(res)
-            if (config["translate"]) {
-                access.setAttribute("idLan", res)
-                continue
-            }
-
-            if (config["type"] == "img") {
-                access.src = window.location.origin + '/' +res
-                // console.log(res)
-                continue
-            }
-
-            if (config["prefix"]) {
-                access.innerHTML = config["prefix"].concat(res)
-                continue
-            }
-
-            access.innerHTML = res
         }
     }
-    // In the JSON, the order is already listed from oldest to newest
-    #assignAndCreateWorkDiv(Arr) {
-        var sectionIndex = -1
-        for (let i = 0; i < Arr.length; i++) {
-            if (i % 3 == 0 && this.sortMode == "Grid") {
-                sectionIndex ++
-                this.#createSection(sectionIndex)
-                let div = document.createElement("div")
-                div.id = "sectionLine".concat(sectionIndex)
-                div.classList.add("sectionLine")
-                document.getElementById("section".concat(sectionIndex)).appendChild(div)
+
+    #assignAndCreateWorkDiv() {
+        let sectionIndex = -1;
+        const itemsPerSection = this.sortMode === "Grid" ? 3 : 1;
+
+        for (let i = 0; i < this.file.length; i++) {
+            if (i % itemsPerSection === 0) {
+                sectionIndex++;
+                this.#createSection(sectionIndex);
+                
+                const line = document.createElement("div");
+                line.id = `sectionLine${sectionIndex}`;
+                line.classList.add("sectionLine");
+                document.getElementById(`section${sectionIndex}`).appendChild(line);
             }
-            if (this.sortMode == "Tile") {
-                sectionIndex ++
-                this.#createSection(sectionIndex)
-                let div = document.createElement("div")
-                div.id = "sectionLine".concat(sectionIndex)
-                div.classList.add("sectionLine")
-                document.getElementById("section".concat(sectionIndex)).appendChild(div)
-            }
-            this.#addToSection(Arr[i], sectionIndex)
+            this.#addToSection(i, sectionIndex);
         }
-        this.assignInfo()
-        this.#sectionIndex = sectionIndex
-        console.log(this.#sectionIndex)
-    }
-    #sortAlphabetically() {
-        var workNameArr = []
-        for (let i = 0; i < this.fileLen; i++) {
-            workNameArr.push(this.file[i]["fileName"])
-        }
-        var workNameSort = workNameArr.toSorted()
-        var workIndexArr = []
-        for (let i = 0; i < workNameSort.length; i++) {
-            for (let j = 0; j < workNameArr.length; j++) {
-                if (workNameArr[j] == workNameSort[i]) {
-                    workIndexArr.push(j)
-                    break
-                }
-            }
-        }
-        return workIndexArr
+        
+        this.assignInfo();
+        this.#sectionIndex = sectionIndex;
     }
     
     #createSection(sectionIndex) {
-        let div = document.createElement("div")
-        div.id = "section".concat(sectionIndex)
-        div.classList.add("section")
-        document.getElementById("midpage").appendChild(div)
-    }
-
-    sortOldest() {
-        this.#assignAndCreateWorkDiv(Object.keys(this.file))
-    }
-
-    sortNewest() {
-        this.#assignAndCreateWorkDiv(Object.keys(this.file).reverse())
-    }
-
-
-    sortAtoZ() {
-        var workIndexArr = this.#sortAlphabetically()
-        this.#assignAndCreateWorkDiv(workIndexArr)
-    }
-    
-    sortZtoA() {
-        var workIndexArr = this.#sortAlphabetically().reverse()
-        this.#assignAndCreateWorkDiv(workIndexArr)
+        const div = document.createElement("div");
+        div.id = `section${sectionIndex}`;
+        div.classList.add("section");
+        
+        const midpage = document.getElementById("midpage");
+        if (midpage) midpage.appendChild(div);
     }
 
     clearWorkDiv() {
         for (let i = 0; i <= this.#sectionIndex; i++) {
-            // console.log(i)
-            let elem = document.getElementById("section".concat(i))
-            elem.remove()
+            const elem = document.getElementById(`section${i}`);
+            if (elem) elem.remove();
         }
-        this.#sectionIndex = 0
+        this.#sectionIndex = 0;
     }
 }
 
+export function showNotif(idLan) {
+    var notificationTimer
+    var curLan = localStorage.getItem('selectedLanguage') || 'en'
+
+    var overlay = document.getElementById('overlay')
+    var overlayTxt = overlay.querySelector('span')
+    overlayTxt.setAttribute('idLan', idLan)
+    translateData(curLan)
+    overlay.classList.add("show")
+    clearTimeout(notificationTimer)
+    notificationTimer = setTimeout(() => {overlay.classList.remove("show")}, 3000)
+}

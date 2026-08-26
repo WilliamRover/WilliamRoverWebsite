@@ -1,22 +1,24 @@
+import {translateData} from "../../lang.js";
+translateData(curLan)
 // Lan button
 var lanShow = false;
 var r = document.querySelector(':root');
-var lanbtn = document.getElementById("lanbtnID");
+// var lanbtn = document.getElementById("lanbtnID");
 
-lanbtn.onclick = function() {
-    if (lanShow == false) {
-        r.style.setProperty('--lan-show', "block");
-    } else {
-        r.style.setProperty('--lan-show', "none");
-    }
-    lanShow = !lanShow;
-}
-document.addEventListener('click', (event => {
-    if (!lanbtn.contains(event.target)) {
-        lanShow = false;
-        r.style.setProperty('--lan-show', "none");
-    }
-}))
+// lanbtn.onclick = function() {
+//     if (lanShow == false) {
+//         r.style.setProperty('--lan-show', "block");
+//     } else {
+//         r.style.setProperty('--lan-show', "none");
+//     }
+//     lanShow = !lanShow;
+// }
+// document.addEventListener('click', (event => {
+//     if (!lanbtn.contains(event.target)) {
+//         lanShow = false;
+//         r.style.setProperty('--lan-show', "none");
+//     }
+// }))
 
 function reloadCss() {
     var links = document.getElementsByTagName("link");
@@ -29,54 +31,113 @@ function reloadCss() {
 }
 
 // Lan switching
-// Lan button
-var lan1Btn = document.getElementById("lanButtonTop")
-var lan2Btn = document.getElementById("lanButtonBottom")
-// var lanArr = ["../lang/en.json", "../lang/fi.json", "../lang/vn.json"]
+// Language switching
+var langList = document.getElementById('lanList')
+var lanBtn = document.getElementById('lanButton')
 var curLan = localStorage.getItem('selectedLanguage') || 'en';
-switchLanBtn(curLan)
 
-import {translateData} from "../../lang.js";
-translateData(curLan)
-
-
-lan1Btn.onclick = function() {
-    console.log("Top is clicked")
-    checkSwitchPos(curLan, 1)
-}
-lan2Btn.onclick = function() {
-    console.log("Bot is clicked")
-    checkSwitchPos(curLan, 2)
-}
-
-async function switchLanBtn(key) {
+const fetchLangData = async () => {
     try {
-        const response = await fetch(`${window.location.origin}/data/lang/${key}.json`);
-        const file = await response.json();
-        let lanPos = file["navbar"]["lan"]
-        // Lan img
-        var lanImgArr = document.getElementsByClassName("flagImg")
-        // Lan span
-        var lanSpanArr = document.getElementsByClassName("lanSpan")
-        for (let i = 0; i < lanImgArr.length; i++) {
-            lanImgArr[i].src = lanPos[i]["innerImg"]
-            lanSpanArr[i].innerHTML = lanPos[i]["innerSpan"]
-        }
-        var search = document.getElementById("search")
-        search.placeholder = file["navbar"]["search"]
-        r.style.setProperty('--cur-lan', lanPos[0]["lang"]);
-        curLan = window.getComputedStyle(document.body).getPropertyValue('--cur-lan');
-        localStorage.setItem('selectedLanguage', curLan);
-        if (light) {
-            switchLanLight(curLan, 0)
-        } else {
-            switchLanLight(curLan, 1)
-        }
-        console.log(curLan)
-        translateData(curLan)
+        const body = await (await fetch("/data/Language/langMap.json")).json()
+        return body
     } catch (error) {
-        console.error("Language loading failed:", error);
+        console.error("failed to fetch lang data")
+        return []
     }
+}
+
+function innitLangDropdown(data) {
+    const curLanObj = data.find(l => l.lang == curLan)
+    lanBtn.innerHTML = `<img src=${curLanObj.flag} alt="" class="flagImg" id="curFlag">
+                        <span id="curLan">${curLanObj.label}</span>
+                        <i class="fa-solid fa-caret-down"></i>`
+    langList.innerHTML = ""
+    data.forEach(lang => {
+        if (lang.lang === curLan) return
+        const li = document.createElement('li')
+        li.innerHTML = `<img src="${lang.flag}">
+                        <span>${lang.label}</span>`
+        li.addEventListener('click', async () => {
+            curLan = lang.lang
+            localStorage.setItem('selectedLanguage', curLan)
+            innitLangDropdown(data)
+            lanList.classList.remove('active')
+            console.log('switched to ' + curLan)
+            await translateData(curLan)
+        })
+        langList.appendChild(li)
+    });
+}
+
+function dropdownInteracted() {
+    lanBtn.addEventListener('click', () => {
+        langList.classList.toggle('active')
+    })
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.lan')) {
+            langList.classList.remove('active')
+        }
+    })
+}
+
+const langLoadMain = async () => {
+    dropdownInteracted()
+    const langData = await fetchLangData()
+
+    console.log(langData)
+    innitLangDropdown(langData)
+    await translateData(curLan)
+}
+
+langLoadMain()
+// Lan button
+// var lan1Btn = document.getElementById("lanButtonTop")
+// var lan2Btn = document.getElementById("lanButtonBottom")
+// var lanArr = ["../lang/en.json", "../lang/fi.json", "../lang/vn.json"]
+// var curLan = localStorage.getItem('selectedLanguage') || 'en';
+// switchLanBtn(curLan)
+
+
+
+
+// lan1Btn.onclick = function() {
+//     console.log("Top is clicked")
+//     checkSwitchPos(curLan, 1)
+// }
+// lan2Btn.onclick = function() {
+//     console.log("Bot is clicked")
+//     checkSwitchPos(curLan, 2)
+// }
+
+// async function switchLanBtn(key) {
+//     try {
+//         const response = await fetch(`${window.location.origin}/data/lang/${key}.json`);
+//         const file = await response.json();
+//         let lanPos = file["navbar"]["lan"]
+//         // Lan img
+//         var lanImgArr = document.getElementsByClassName("flagImg")
+//         // Lan span
+//         var lanSpanArr = document.getElementsByClassName("lanSpan")
+//         for (let i = 0; i < lanImgArr.length; i++) {
+//             lanImgArr[i].src = lanPos[i]["innerImg"]
+//             lanSpanArr[i].innerHTML = lanPos[i]["innerSpan"]
+//         }
+//         var search = document.getElementById("search")
+//         search.placeholder = file["navbar"]["search"]
+//         r.style.setProperty('--cur-lan', lanPos[0]["lang"]);
+//         curLan = window.getComputedStyle(document.body).getPropertyValue('--cur-lan');
+//         localStorage.setItem('selectedLanguage', curLan);
+//         if (light) {
+//             switchLanLight(curLan, 0)
+//         } else {
+//             switchLanLight(curLan, 1)
+//         }
+//         console.log(curLan)
+//         translateData(curLan)
+//     } catch (error) {
+//         console.error("Language loading failed:", error);
+//     }
 
 
     // fetch(`../lang/${key}.json`).then(response => {
@@ -104,16 +165,16 @@ async function switchLanBtn(key) {
     //     console.log(curLan)
     //     translateData(curLan)
     // })
-}
+// }
 
-function checkSwitchPos(key, pos) {
-    fetch(`${window.location.origin}/data/lang/${key}.json`).then(response => {
-        return response.json();
-    }).then(file => {
-        var lang = file["navbar"]["lan"]
-        switchLanBtn(lang[pos]["lang"])
-    });
-}
+// function checkSwitchPos(key, pos) {
+//     fetch(`${window.location.origin}/data/lang/${key}.json`).then(response => {
+//         return response.json();
+//     }).then(file => {
+//         var lang = file["navbar"]["lan"]
+//         switchLanBtn(lang[pos]["lang"])
+//     });
+// }
 
     
 // theme button 
@@ -121,7 +182,7 @@ var lida = document.getElementById("LDbtn");
 var ldStatus = document.getElementById("ldStatus");
 
 function switchLanLight(key, statusIndex) {
-    fetch(`${window.location.origin}/data/lang/${key}.json`).then(response => {
+    fetch(`${window.location.origin}/data/Language/lang/${key}.json`).then(response => {
         return response.json();
     }).then(file => {
         let lightStat = file["navbar"]["theme"][statusIndex]

@@ -4,6 +4,10 @@
     padding:0;
 }
 
+/* Midpage */
+.midpage {
+    width: 75%;
+}
 /* Sort */
 .sort {
     width:100%;
@@ -229,8 +233,97 @@
     display: none;
 }
 
-@media (max-width: 768px) {
-  
+.pageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between Prev/Next buttons and the numbers */
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--txt-color);
+    margin-top: 40px;
+    padding-bottom: 100px;
+}
 
+/* Inner layout just for the numbers */
+.page-numbers-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Reset default button styles */
+.page-btn, .page-num {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Page Numbers & Ellipses */
+.page-num {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: background-color 0.2s;
+}
+
+.page-num:hover:not(.ellipsis):not(.active) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* The active circle state */
+.page-num.active {
+    border-color: var(--txt-color);
+    cursor: default;
+}
+
+.page-num.ellipsis {
+    cursor: default;
+    width: auto;
+    padding: 0 5px;
+}
+
+/* Prev/Next Buttons */
+.page-btn {
+    gap: 2px;
+}
+
+.page-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+}
+
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .sort1 {
+        display: none;
+    }
+    .sectionLine {
+        display: none;
+    }
+    .section {
+        margin-top: 0px;
+    }
+    #section0 {
+        margin-top: 30px;
+    }
+    .workGrid {
+        margin-bottom: 30px;
+    }
 }
 

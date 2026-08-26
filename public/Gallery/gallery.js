@@ -1,219 +1,280 @@
-import {loadFile} from "../Reuse/shared.js";
+import { loadFile, Sort, showNotif } from "../Reuse/shared.js";
 
-
-// Load navbar
+// Load navbar and footer
 loadFile("../Reuse/Navbar/navbar.html", "navbar");
-// Load footer
 loadFile("../Reuse/Footer/footer.html", "footer");
 
+// --- Configuration & Initialization ---
+const API_URL = { gallery: "https://williamrover.servehttp.com/api/gallery" };
+const COLORS = { ACTIVE: "#052854", INACTIVE: "#063B7D" };
 
-import {Sort} from "../Reuse/shared.js";
+// Map old localStorage values to the new API format safely
+const LEGACY_SORT_MAP = {
+    "alphabetical": "a-z",
+    "alphabeticalRev": "z-a"
+};
 
-// Sort funcs
+let rawSort = localStorage.getItem("selectedSort") || "newest";
+let curSort = LEGACY_SORT_MAP[rawSort] || rawSort;
+let curOrganize = localStorage.getItem("selectedOrganize") || "Grid";
+let workTemp = localStorage.getItem("workTemp") || "workTemp1";
 
-// fetch(`./Data/gallery.json`).then(response => {
-//         return response.json();
-//         }).then(file => {
-//             new Sort(file).sortNewest()
-//         })
+// Global Pagination State
+let curPage = 1;
+let totalPages = 1;
 
+const mobileQuery = window.matchMedia("(max-width: 768px)");
 
-function sortWork(curSort, workClass) {
-    changeColor(prevBtn, "#063B7D")
-    workClass.ready.then(() => {
-        // console.log(workClass)
-        switch (curSort) {
-            case "newest":
-                changeColor(newBtn, "#052854")
-                prevBtn = newBtn
-                workClass.sortNewest()
-                break
-            case "oldest":
-                changeColor(oldBtn, "#052854")
-                prevBtn = oldBtn
-                workClass.sortOldest()
-                break
-            case "alphabetical":
-                changeColor(alphabetBtn, "#052854")
-                prevBtn = alphabetBtn
-                workClass.sortAtoZ()
-                break
-            case "alphabeticalRev":
-                changeColor(alphabetRevBtn, "#052854")
-                prevBtn = alphabetRevBtn
-                workClass.sortZtoA()
-                break
-            case "clearWork":
-                workClass.clearWorkDiv()
-                return
-        }
-    })
+if (mobileQuery.matches) {
+    curOrganize = "Grid";
+    workTemp = "workTemp1";
 }
-// // newest, oldest, AtoZ, ZtoA
-var curSort = localStorage.getItem("selectedSort") || "newest"
-var curOrganize = localStorage.getItem("selectedOrganize") || "Grid"
 
-var workTemp = localStorage.getItem("workTemp") || "workTemp1"
-// var keyArr = [".thumbnail", ".fileName", ".author", ".dateCreated", ".yearCreated", ".type.generalType"]
-var keyArr = [
-  { selector: ".thumbnail", key: "thumbnail", type: "img" },
-  { selector: ".fileName", key: "fileName" },
-  { selector: ".author", key: "author" },
-  { selector: ".dateCreated", key: "dateCreated", translate: true },
-  { selector: ".yearCreated", key: "yearCreated", prefix: " " },
-  { selector: ".type.generalType", key: "type.generalType", translate: true }
+const keyArr = [
+    { selector: ".thumbnail", key: "thumbnail", type: "img" },
+    { selector: ".fileName", key: "file_name" },
+    { selector: ".author", key: "authors" },
+    { selector: ".dateCreated", key: "date_created", translate: true },
+    { selector: ".yearCreated", key: "year_created", prefix: " " },
+    { selector: ".type.generalType", key: "general_type", translate: true }
 ];
-var workOrganize = new Sort(`${window.location.origin}/data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
-// // console.log(curSort)
-var prevBtn;
-sortWork(curSort, workOrganize)
-var newBtn = document.getElementById("sortBtnNewest")
-var oldBtn = document.getElementById("sortBtnOldest")
-var alphabetBtn = document.getElementById("sortBtnAlphabetical")
-var alphabetRevBtn = document.getElementById("sortBtnAlphabeticalRev")
 
-var gridBtn = document.getElementById("sortGrid")
-var tileBtn = document.getElementById("sortTile")
+// --- DOM Elements ---
+const sortBtns = {
+    "newest": document.getElementById("sortBtnNewest"),
+    "oldest": document.getElementById("sortBtnOldest"),
+    "a-z": document.getElementById("sortBtnAlphabetical"),
+    "z-a": document.getElementById("sortBtnAlphabeticalRev")
+};
 
-function changeColor(obj, color) {
+const layoutBtns = {
+    Grid: document.getElementById("sortGrid"),
+    Tile: document.getElementById("sortTile")
+};
+
+let prevBtn = sortBtns[curSort] || sortBtns["newest"];
+let workOrganize = new Sort(workTemp, curOrganize, `#work`, keyArr); // Instantiated without file path
+
+// --- API Fetch ---
+async function fetchGallery(sortType, pageNum = 1) {
     try {
-        obj.style.backgroundColor = color;
+        const response = await fetch(`${API_URL.gallery}?sort=${sortType}&page=${pageNum}`);
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error("Invalid content type received, expected JSON.");
+        }
+        return await response.json(); 
     } catch (error) {
-        return;
+        console.error("Fetch error:", error);
+        return [];
     }
-}
-if (curOrganize == "Grid") {
-    changeColor(gridBtn, "#052854")
-} else {
-    changeColor(tileBtn, "#052854")
-}
-gridBtn.onclick = function() {
-    if (curOrganize == "Grid") {
-        return
-    }
-    curOrganize = "Grid"
-    workTemp = "workTemp1"
-    changeColor(gridBtn, "#052854")
-    changeColor(tileBtn, "#063B7D")
-    localStorage.setItem("selectedOrganize", curOrganize)
-    localStorage.setItem("workTemp", workTemp)
-    workOrganize.clearWorkDiv()
-    workOrganize = new Sort(`${window.location.origin}/data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
-    // workOrganize = null
-    // console.log(workOrganize)
-    sortWork(curSort, workOrganize)
 }
 
-tileBtn.onclick = function() {
-    if (curOrganize == "Tile") {
-        return
+// --- Core Functions ---
+function changeColor(obj, color) {
+    if (obj && obj.style) {
+        obj.style.backgroundColor = color;
     }
-    curOrganize = "Tile"
-    workTemp = "workTemp2"
-    changeColor(tileBtn, "#052854")
-    changeColor(gridBtn, "#063B7D")
-    localStorage.setItem("selectedOrganize", curOrganize)
-    localStorage.setItem("workTemp", workTemp)
-    // workOrganize = null
-    workOrganize.clearWorkDiv()
-    workOrganize = new Sort(`${window.location.origin}/data/gallery.json`, workTemp, curOrganize, `#work`, keyArr)
-    // workOrganize = null
-    // console.log(workOrganize)
-    sortWork(curSort, workOrganize)
-    // console.log(workOrganize)
-    // sortWork(curSort)
 }
 
-newBtn.onclick = function() {
-    if (curSort == "newest") {
-        return
+async function loadAndSortWork(sortType, pageNum = 1) {
+    changeColor(prevBtn, COLORS.INACTIVE);
+
+    const activeBtn = sortBtns[sortType];
+    if (activeBtn) {
+        changeColor(activeBtn, COLORS.ACTIVE);
+        prevBtn = activeBtn;
     }
-    curSort = "newest"
+
+    curSort = sortType;
+    curPage = pageNum; // Sync current page state
     localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork", workOrganize)
-    sortWork(curSort, workOrganize)
-}
-oldBtn.onclick = function() {
-    if (curSort == "oldest") {
-        return
+    
+    // Fetch newly sorted and paginated data
+    const rawData = await fetchGallery(curSort, curPage);
+    
+    // Update pagination state and UI
+    if (rawData["pagination"]) {
+        totalPages = rawData["pagination"]["totalPages"];
+        renderPagination();
     }
-    curSort = "oldest"
-    localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork", workOrganize)
-    sortWork(curSort, workOrganize)
-}
-alphabetBtn.onclick = function() {
-    if (curSort == "alphabetical") {
-        return
-    }
-    curSort = "alphabetical"
-    localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork", workOrganize)
-    sortWork(curSort, workOrganize)
-}
-alphabetRevBtn.onclick = function() {
-    if (curSort == "alphabeticalRev") {
-        return
-    }
-    curSort = "alphabeticalRev"
-    localStorage.setItem("selectedSort", curSort);
-    sortWork("clearWork", workOrganize)
-    sortWork(curSort, workOrganize)
+
+    const sortedData = rawData["data"] || [];
+    
+    // workOrganize.renderData() automatically clears the old container in shared.js
+    workOrganize.renderData(sortedData); 
 }
 
+function handleLayoutChange(type, temp) {
+    if (curOrganize === type) return;
+    
+    // Block switching to Tile mode if on mobile
+    if (mobileQuery.matches && type === "Tile") return; 
 
-// View work
-document.addEventListener("click", (e) => {
-    const viewBtn = e.target.closest(".view");
+    curOrganize = type;
+    workTemp = temp;
+    
+    changeColor(layoutBtns[type], COLORS.ACTIVE);
+    changeColor(layoutBtns[type === "Grid" ? "Tile" : "Grid"], COLORS.INACTIVE);
+    
+    if (!mobileQuery.matches) {
+        localStorage.setItem("selectedOrganize", curOrganize);
+        localStorage.setItem("workTemp", workTemp);
+    }
+    
+    const existingData = workOrganize.file;
+    workOrganize.clearWorkDiv();
+    workOrganize = new Sort(workTemp, curOrganize, `#work`, keyArr);
+    if (existingData.length > 0) {
+        workOrganize.renderData(existingData);
+    }
+}
 
-    if (!viewBtn) return;
-    const work = e.target.closest('[id^="work"]')
-    // console.log(e.target.parentElement.id)
-    // var id = parseInt(e.target.parentElement.parentElement.parentElement.id.replace("work", ""))
-    var id = parseInt(work.id.replace("work", ""))
-    window.location.href = `./item.html?filenum=${id}`
+// --- Event Listeners: Sorting & Layout ---
+layoutBtns.Grid.onclick = () => {
+    handleLayoutChange("Grid", "workTemp1");
+    showNotif("gallery.overlay.grid")
+}
+layoutBtns.Tile.onclick = () => {
+    handleLayoutChange("Tile", "workTemp2")
+    showNotif("gallery.overlay.tiles")
+}
+
+Object.entries(sortBtns).forEach(([type, btn]) => {
+    if (btn) btn.onclick = () => {
+        // When user changes sorting, always reset to page 1
+        if (curSort !== type) loadAndSortWork(type, 1); 
+    };
 });
 
-// Download work
+// Set initial layout colors & trigger initial fetch
+changeColor(layoutBtns[curOrganize], COLORS.ACTIVE);
+changeColor(layoutBtns[curOrganize === "Grid" ? "Tile" : "Grid"], COLORS.INACTIVE);
+
+// Launch the initial load!
+loadAndSortWork(curSort, curPage);
+
+// --- Global Click Handlers (Event Delegation) ---
 document.addEventListener("click", async (e) => {
+    const viewBtn = e.target.closest(".view");
     const downloadBtn = e.target.closest(".download");
-    if (!downloadBtn) return;
-    const work = e.target.closest('[id^="work"]')
-    var id = parseInt(work.id.replace("work", ""))
-
-    const file = await fetch(`${window.location.origin}/data/gallery.json`)
-    const res = await file.json()
-    const link = res[id]["downloadPath"]
-    showClipboardOverlay(1);
-    const url = window.URL.createObjectURL(await (await fetch(link)).blob());
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = link.split("/").pop();
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    
-    // const blob = await file.blob()
-})
-
-// Copy link
-document.addEventListener("click", async (e) => {
     const copyLinkBtn = e.target.closest(".copyLink");
-    if (!copyLinkBtn) return;
-    const work = e.target.closest('[id^="work"]')
-    var id = parseInt(work.id.replace("work", ""))
-    var url = `${window.location.origin}/Gallery/item.html?filenum=${id}`
 
-    try {
-        await navigator.clipboard.writeText(url);
-        showClipboardOverlay(0);
-    } catch (err) {
-        console.error('Failed to copy: ', err);
+    if (!viewBtn && !downloadBtn && !copyLinkBtn) return;
+
+    const work = e.target.closest('[id^="work"]');
+    if (!work) return;
+
+    const index = parseInt(work.id.replace("work", ""));
+    
+    const item = workOrganize.file[index]; 
+    if (!item) return;
+
+    const fileId = item.file_num;
+
+    // View work
+    if (viewBtn) {
+        window.location.href = `./item.html?filenum=${fileId}`;
+        return;
     }
-})
 
-function showClipboardOverlay(i) {
-    const overlay = document.getElementsByClassName("overlay")[i];
-    overlay.classList.add('show');
-    setTimeout(() => {overlay.classList.remove('show');}, 2000);
+    // Download work
+    if (downloadBtn) {
+        const link = item.download_path;
+        showNotif("gallery.overlay.download")
+        
+        const blobRes = await fetch(link);
+        const blob = await blobRes.blob();
+        const url = window.URL.createObjectURL(blob);
+        
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = link.split("/").pop();
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url); // Free up memory
+        return;
+    }
+
+    // Copy link
+    if (copyLinkBtn) {
+        const url = `${window.location.origin}/Gallery/item.html?filenum=${fileId}`;
+        try {
+            await navigator.clipboard.writeText(url);
+            showNotif("gallery.overlay.copy")
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+});
+
+mobileQuery.addEventListener("change", (e) => {
+    if (e.matches && curOrganize !== "Grid") {
+        handleLayoutChange("Grid", "workTemp1");
+    } else if (!e.matches) {
+        const savedLayout = localStorage.getItem("selectedOrganize");
+        if (savedLayout === "Tile") {
+            handleLayoutChange("Tile", "workTemp2");
+        }
+    }
+});
+
+// --- Pagination Logic ---
+const pageCtnNum = document.getElementById("page-numbers");
+const prevPageBtn = document.getElementById("prev-btn");
+const nextPageBtn = document.getElementById("next-btn");
+
+function renderPagination() {
+    if (!pageCtnNum || !prevPageBtn || !nextPageBtn) return;
+
+    let html = '';
+    const addPage = (num) => {
+        const activeClass = num === curPage ? 'active' : '';
+        html += `<button class="page-num ${activeClass}" onclick="changePage(${num})">${num}</button>`;
+    };
+    
+    const addEllipsis = () => {
+        html += `<span class="page-num ellipsis">...</span>`;
+    }
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const delta = isMobile ? 1 : 2;
+    let rangeStart = Math.max(2, curPage - delta);
+    let rangeEnd = Math.min(totalPages - 1, curPage + delta);
+
+    addPage(1);
+
+    // Left ellipsis
+    if (rangeStart > 2) addEllipsis();
+
+    // Middle range
+    for (let i = rangeStart; i <= rangeEnd; i++) {
+        addPage(i);
+    }
+
+    // Right ellipsis
+    if (rangeEnd < totalPages - 1) addEllipsis();
+
+    // Always show the last page
+    if (totalPages > 1) addPage(totalPages);
+
+    // Inject only the numbers into the DOM
+    pageCtnNum.innerHTML = html;
+
+    // Toggle disabled states on the static HTML buttons
+    prevPageBtn.disabled = curPage === 1;
+    nextPageBtn.disabled = curPage === totalPages;
+}
+
+window.changePage = function(newPage) {
+  if (newPage >= 1 && newPage <= totalPages) {
+    // We only need to call this. It handles curPage, clearing the DOM, fetching, and re-rendering!
+    loadAndSortWork(curSort, newPage);
+  }
+}
+
+if (prevPageBtn && nextPageBtn) {
+    prevPageBtn.addEventListener('click', () => changePage(curPage - 1));
+    nextPageBtn.addEventListener('click', () => changePage(curPage + 1));
 }

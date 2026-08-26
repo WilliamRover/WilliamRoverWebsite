@@ -4,6 +4,10 @@
     padding:0;
 }
 
+/* Midpage */
+.midpage {
+    width: 75%;
+}
 /* General info */
 /* Container 1 */
 .fileName {
@@ -34,20 +38,72 @@
     gap: 2rem;
     margin-top: 2rem;
 }
+
+/* Thumbnail */
 .itemImg img {
     width: 100%;
-    max-height:24rem;
+    height: 100%;
+    /* max-height: 24rem; */
     object-fit: cover;
-    border-radius: 1.75rem 1.75rem 0 0;
-    border: solid 0.2rem var(--txt-color);
+    display: block;
 }
 .itemImg {
-    min-width: 3.6rem;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-bottom:0.8rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    border-top-left-radius: 1.5rem; 
+    border-top-right-radius: 1.5rem; 
+    border: solid 0.2rem var(--txt-color);
+    overflow: hidden;
+    display: block;
 }
+
+.controlPanel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    background-color: #063B7D;
+    border-top: solid 0.15rem var(--txt-color);
+    border-left: solid 0.15rem var(--txt-color);
+    border-top-left-radius: 0.8rem;
+}
+
+.controlPanel button {
+    background: transparent;
+    border: none;
+    border-right: solid 0.15rem var(--txt-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.controlPanel button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.controlPanel button:last-child {
+    border-right: none; 
+}
+
+.controlPanel button img {
+    width: 1.3rem;
+    height: 1.3rem;
+    object-fit: contain;
+    border: none;
+}
+/* Container 3 */
+.description {
+    font-family:MontseBOLD;
+    font-size: 2rem;
+    color: var(--txt-color);
+    margin-top: 3rem;
+}
+
+/* other info */
 .otherInfo {
     font-family: MontseREG;
     font-size: 1.2rem;
@@ -58,4 +114,15 @@
 }
 .otherInfo div {
     margin-bottom: 0.6rem;
+}
+
+/* Other works */
+.otherWorks {
+    margin-top: 3rem;
+}
+.oWHead {
+    font-family:MontseEXTRABOLD;
+    font-size: 2rem;
+    color: var(--txt-color);
+    margin-top: 1rem;
 }

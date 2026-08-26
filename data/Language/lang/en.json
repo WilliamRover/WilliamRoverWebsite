@@ -23,9 +23,7 @@
                 "lang": "vn"
             }
         ],
-        "theme": ["Light mode", "Dark mode"],
-        "clipboard": "Copied to clipboard!",
-        "download": "Downloading file"
+        "theme": ["Light mode", "Dark mode"]
     },
     
     "footer": {
@@ -64,6 +62,12 @@
                 "download": "Download",
                 "link": "Link"
             }
+        },
+        "overlay": {
+            "grid": "Switched to grid",
+            "tiles": "Switched to tiles",
+            "download": "Downloading...",
+            "copy": "Link copied..."
         }
     }
 }

@@ -37,7 +37,7 @@ function getNested(obj, path) {
 // }
 export async function translateData(lan) {
   try {
-    const response = await fetch(`${window.location.origin}/data/lang/${lan}.json`);
+    const response = await fetch(`${window.location.origin}/data/Language/lang/${lan}.json`);
     const file = await response.json();
 
     const elements = document.querySelectorAll("[idLan]");
@@ -47,7 +47,18 @@ export async function translateData(lan) {
       const res = getNested(file, key);
 
       if (res !== undefined) {
-        el.innerHTML = res;
+        const tagName = el.tagName.toLowerCase();
+
+        // Detect specific tags and route the translation accordingly
+        // console.log(res)
+        if (tagName === 'input' || tagName === 'textarea') {
+          el.placeholder = res
+        } else if (tagName === 'img') {
+          el.src = res;
+        } else {
+          // Default behavior for standard text elements (div, span, p, h1, etc.)
+          el.innerHTML = res;
+        }
       }
     });
 

@@ -1,0 +1,17 @@
+[
+    {
+        "lang": "en",
+        "label": "In English",
+        "flag": "/data/Language/countryFlags/Flag_of_England.svg.webp"
+    },
+    {
+        "lang": "fi",
+        "label": "Suomeksi",
+        "flag": "/data/Language/countryFlags/Flag_of_Finland.svg.webp"
+    },
+    {
+        "lang": "vn",
+        "label": "Tiếng Việt",
+        "flag": "/data/Language/countryFlags/Flag_of_Vietnam.svg.webp"
+    }
+]

@@ -19,16 +19,16 @@
             </div>
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" placeholder="" id="search">
+                <input type="search" placeholder="" id="search" idLan="navbar.search">
             </div>
             <div class="right-side">
-                <div class="lan" id ="lan">
-                    <button class="lanbtn" id="lanbtnID"><img src="" id="flagCur" class="flagImg" alt=""><span id="curLan" class="lanSpan"></span><i class="fa-solid fa-caret-down"></i></button>
-                    <div class="dropdown-list" id="dropdownList">
-                        <button id="lanButtonTop"><div class="flagDrop"><img src="" id="flag1" class="flagImg" alt=""><span id="topLan" class="lanSpan"></span></div></button>
-                        <hr id="line">
-                        <button id="lanButtonBottom"><div class="flagDrop"><img src="" id="flag2" class="flagImg" alt=""><span id="botLan" class="lanSpan"></span></div></button>
-                    </div>
+                <div class="lan">
+                    <button id="lanButton">
+                        <img src="/data/Language/countryFlags/Flag_of_England.svg.webp" alt="" class="flagImg" id="curFlag">
+                        <span id="curLan">In English</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                    <ul id="lanList"></ul>
                 </div>
                 <div class="line2"><span>|</span></div>
                 <div class="light-dark" id="themeSwitch">
@@ -41,12 +41,9 @@
                 </div>
             </div>
         </div>
-        <!-- Link copied overlay -->
-        <div id="linkCopiedOverlay" class="overlay" idLan="navbar.clipboard">
-            <span>Copied to clipboard!</span>
-        </div>
-        <div id="downloadOverlay" class="overlay" idLan="navbar.download">
-            <span>Downloading file</span>
+        <!-- Overlay -->
+        <div id="overlay" class="overlay">
+            <span idLan="">Random text</span>
         </div>
         <script src="../Reuse/Navbar/navbar.js" async defer type="module"></script>
         <script src="../lang.js" async defer type="module"></script>

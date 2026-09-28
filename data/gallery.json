@@ -13,7 +13,8 @@
         "fileSize": "60.4 KB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/1 - 1st digital picture.jpg",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/1%20-%201st%20digital%20picture.jpg"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/1%20-%201st%20digital%20picture.jpg",
+        "description": "My first ever digital picture (well a proper one, earlier one was made in Paint)"
     },
     {
         "fileNum": 2,
@@ -29,7 +30,8 @@
         "fileSize": "226 KB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/2 - Animator in sunset.jpg",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/2%20-%20Animator%20in%20sunset.jpg"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/2%20-%20Animator%20in%20sunset.jpg",
+        "description": "As the title"
     },
     {
         "fileNum": 3,
@@ -45,7 +47,8 @@
         "fileSize": "3.57 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/3 - Glowing deer found by a hunter.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/3%20-%20Glowing%20deer%20found%20by%20a%20hunter.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/3%20-%20Glowing%20deer%20found%20by%20a%20hunter.png",
+        "description": "I really have no idea why i drew this one"
     },
     {
         "fileNum": 4,
@@ -61,7 +64,8 @@
         "fileSize": "3.80 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/4 - Couple walking in winter forest.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/4%20-%20Couple%20walking%20in%20winter%20forest.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/4%20-%20Couple%20walking%20in%20winter%20forest.png",
+        "description": "First ever depiction of Stan and Rivera"
     },
     {
         "fileNum": 5,
@@ -77,7 +81,8 @@
         "fileSize": "4.68 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/5 - A couple kiss.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/5%20-%20A%20couple%20kiss.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/5%20-%20A%20couple%20kiss.png",
+        "description": "eh"
     },
     {
         "fileNum": 6,
@@ -93,7 +98,8 @@
         "fileSize": "3.79 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/6 - Night winter nature.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/6%20-%20Night%20winter%20nature.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/6%20-%20Night%20winter%20nature.png",
+        "description": "Obsessed with Photoshop color lookup"
     },
     {
         "fileNum": 7,
@@ -109,7 +115,8 @@
         "fileSize": "92.5 KB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/7 - Inspiration by Bich Nguyen.jpg",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/7%20-%20Inspiration%20by%20Bich%20Nguyen.jpg"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/7%20-%20Inspiration%20by%20Bich%20Nguyen.jpg",
+        "description": "A painting drew for one of my teacher"
     },
     {
         "fileNum": 8,
@@ -125,7 +132,8 @@
         "fileSize": "120 KB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/8 - Playing guitar on a beach.PNG",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/8%20-%20Playing%20guitar%20on%20a%20beach.PNG"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/8%20-%20Playing%20guitar%20on%20a%20beach.PNG",
+        "description": "Lip syncing testing (yes this was an animation but it so shit i put it as an image only)"
     },
     {
         "fileNum": 9,
@@ -141,7 +149,8 @@
         "fileSize": "15.8 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/9 - An artist in rainy street.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/9%20-%20An%20artist%20in%20rainy%20street.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/9%20-%20An%20artist%20in%20rainy%20street.png",
+        "description": "Did this while also doing English homework"
     },
     {
         "fileNum": 10,
@@ -157,7 +166,8 @@
         "fileSize": "997 KB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/10 - Lest we forget.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/10%20-%20Lest%20we%20forget.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/10%20-%20Lest%20we%20forget.png",
+        "description": "Inspired by WW1 losses"
     },
     {
         "fileNum": 11,
@@ -173,7 +183,8 @@
         "fileSize": "7.35 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/11 - Couple huging in black starry night.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/11%20-%20Couple%20huging%20in%20black%20starry%20night.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/11%20-%20Couple%20huging%20in%20black%20starry%20night.png",
+        "description": "Imagination of snow in early ages. Later when i come to Finland, I realized this is a shitty idea, cause your ass will be frozen"
     },
     {
         "fileNum": 12,
@@ -189,7 +200,8 @@
         "fileSize": "7.76 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/12 - The warmth of love in the cold winter.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/12%20-%20The%20warmth%20of%20love%20in%20the%20cold%20winter.jpg"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/12%20-%20The%20warmth%20of%20love%20in%20the%20cold%20winter.jpg",
+        "description": "Contradiction: Feeling warmer in the cold"
     },
     {
         "fileNum": 13,
@@ -205,7 +217,8 @@
         "fileSize": "8.21 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/13 - Alone in the plain.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/13%20-%20Alone%20in%20the%20plain.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/13%20-%20Alone%20in%20the%20plain.png",
+        "description": "Imagination of a cabin out of nowhere (mökkiä)"
     },
     {
         "fileNum": 14,
@@ -221,7 +234,8 @@
         "fileSize": "7.42 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/14 - Bài cuối môn DI.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/14%20-%20B%C3%A0i%20cu%E1%BB%91i%20m%C3%B4n%20DI.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/14%20-%20B%C3%A0i%20cu%E1%BB%91i%20m%C3%B4n%20DI.png",
+        "description": "A project submitted for a coursework"
     },
     {
         "fileNum": 15,
@@ -237,7 +251,8 @@
         "fileSize": "953 KB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/15 - Happy new painful year.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/15%20-%20Happy%20new%20painful%20year.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/15%20-%20Happy%20new%20painful%20year.png",
+        "description": "Fuck this new year"
     },
     {
         "fileNum": 16,
@@ -253,7 +268,8 @@
         "fileSize": "17.9 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/16 - Knight of the sky.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/16%20-%20Knight%20of%20the%20sky.mp4"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/16%20-%20Knight%20of%20the%20sky.mp4",
+        "description": "Who would thought early planes look cool"
     },
     {
         "fileNum": 17,
@@ -269,7 +285,8 @@
         "fileSize": "115 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/17 - Winter is coming.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/17%20-%20Winter%20is%20coming.zip"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/17%20-%20Winter%20is%20coming.zip",
+        "description": "It is coming indeed"
     },
     {
         "fileNum": 18,
@@ -285,7 +302,8 @@
         "fileSize": "139 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/18 - West Point rural, South Sodotka.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/18%20-%20West%20Point%20rural%2C%20South%20Sodotka.zip"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/18%20-%20West%20Point%20rural%2C%20South%20Sodotka.zip",
+        "description": "An interactive background made purely using simple html, css and js. South Sodotka would have somewhat warm climate"
     },
     {
         "fileNum": 19,
@@ -301,7 +319,8 @@
         "fileSize": "96.4 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/19 - Vapausville rural, North Sodotka.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/19%20-%20Vapausville%20rural%2C%20North%20Sodotka.zip"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/19%20-%20Vapausville%20rural%2C%20North%20Sodotka.zip",
+        "description": "Morning would be very clear. Afternoon is shitty snowstorm, but at night it turned out to be beautiful"
     },
     {
         "fileNum": 20,
@@ -317,7 +336,8 @@
         "fileSize": "54 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/20 - Woliam city, Mylanisa.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/20%20-%20Woliam%20city%2C%20Mylanisa.zip"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/20%20-%20Woliam%20city%2C%20Mylanisa.zip",
+        "description": "So far the most detailed urban project I have drawn. Though this shit cost so much resources that my laptop even refuses to render all the effect unless I heavily compress it."
     },
     {
         "fileNum": 21,
@@ -333,6 +353,7 @@
         "fileSize": "25.9 MB",
         "download": true,
         "thumbnail": "assets/work/thumbnail/21 - Forgot her glove lol.png",
-        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/21%20-%20Forgot%20her%20glove%20lol.png"
+        "downloadPath": "https://pub-1abb721ea3a145179f0d062b84a7b3cb.r2.dev/21%20-%20Forgot%20her%20glove%20lol.png",
+        "description": "Well that went well isn't it"
     }
 ]

@@ -20,7 +20,8 @@ const keyArr = [
     { selector: ".type.generalType", key: "general_type", translate: true },
     { selector: ".type.fileType", key: "file_types" },
     { selector: ".dimension", key: "dimension" },
-    { selector: ".fileSize", key: "file_size" }
+    { selector: ".fileSize", key: "file_size" },
+    { selector: ".descText", key: "description"}
 ];
 
 const bindData = new Sort("", "", "", keyArr);

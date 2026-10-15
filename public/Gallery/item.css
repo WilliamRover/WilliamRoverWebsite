@@ -126,3 +126,215 @@
     color: var(--txt-color);
     margin-top: 1rem;
 }
+
+/* Other work */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.otherBtn {
+    background-color: rgb(6, 59, 125, 0.5);
+    border: none;
+    width: 4rem;
+    height: 15rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--txt-color);
+    transition: background-color 0.2s;
+}
+.otherBtn:hover {
+    background-color: rgb(6, 59, 125, 0.75);
+}
+.otherBtn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.prevBtn {
+    border-radius: 2rem 0 0 2rem;
+}
+.nextBtn {
+    border-radius: 0 2rem 2rem 0;
+}
+.otherBtn svg {
+    width: 2.5rem;
+    height: 10rem;
+}
+
+.cont2 {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;         /* Cuts off the overflowing part of the 3rd card */
+    display: flex;
+    flex-wrap: nowrap;        /* Forces all 3 cards onto a single row */
+    justify-content: flex-start;
+    gap: 3rem;                /* Equal gap between all cards (adjust to your liking) */
+    margin-top: 2.25rem;
+}
+
+.cont2 .workGrid {
+    width:22.5rem;
+    flex-shrink: 0;
+}
+.workTitle1, .workDesc1 {
+    color: var(--txt-color);
+}
+.workImg1 img {
+    width: 100%;
+    max-height:13rem;
+    object-fit: cover;
+    border-radius: 1.75rem 1.75rem 0 0;
+}
+.workImg1 {
+    min-width: 3.6rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom:0.8rem;
+}
+.workName1 {
+    max-width:30rem;
+}
+.workTitle1 {
+    font-family:MontseEXTRABOLD;
+    /* font-weight: 700; */
+    letter-spacing: 0.1rem;
+    font-size:1.5rem;
+}
+.workDesc1 {
+    margin-top:0.5rem;
+    letter-spacing: 0.05rem;
+}
+.workDesc1 span{
+    font-style: italic;
+}
+.workButton1 {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:1.3rem;
+}
+.workButton1 button {
+    height: 2rem;
+    border:none;
+    padding:0 1rem;
+    font-size: 0.87rem;
+    border-radius: 0.6rem 0.6rem 0 0;
+}
+.workButton1 button:nth-child(1) {
+    background-color: #063B7D;
+    color: #E9F2FF;
+}
+.workButton1 button:nth-child(2), .workButton1 button:nth-child(3) {
+    background-color: #4A627F;
+    color:#D3E5FF;
+}
+.workButton1 img {
+    width:1.2rem;
+    margin-top:-0.2rem;
+}
+.workButton1 button:nth-child(2) img{
+    width:1.1rem;
+    margin-top:-0.2rem;
+}
+.workButton1 span {
+    margin-left:0.45rem;
+    font-family: MulishREG;
+    letter-spacing: 0.02rem;
+    font-weight: 100;
+}
+
+/* ---------------- */
+/* Fullscreen Modal  */
+/* ----------------- */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark background overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensures it sits on top of all other elements */
+    /* Hidden by default with a fade transition */
+    opacity: 0;
+    pointer-events: none; 
+    gap: 20px;
+    transition: opacity 0.3s ease;
+}
+
+/* Class added by JS to show the modal */
+.fullscreen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* The Image inside the modal */
+#fullscreen-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(88, 88, 88, 0.2);
+}
+
+#fullscreen-txt {
+  font-size: 30px;
+  color: white;
+  max-width: 80%;
+}
+
+/* The Close Button (X) */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 45px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+    z-index: 1001;
+}
+
+.modal-close:hover {
+    color: #aaaaaa;
+}
+
+@media (max-width: 1200px) {
+    /* If .container2 also needs to stack .itemImg and .otherInfo vertically */
+    .cont2 {
+        display: block; 
+    }
+
+    .otherInfo {
+        display: block;
+    }
+
+    .otherInfo > div {
+        display: block;
+        margin-bottom: 0.5rem; /* Optional: adds spacing between each vertical line */
+    }
+}
+@media (max-width: 768px) {
+    .container2 {
+        display:block;
+    }
+    .otherBtn {
+        width: 1.1rem;
+    }
+    
+}
+

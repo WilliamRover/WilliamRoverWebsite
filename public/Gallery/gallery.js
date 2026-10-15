@@ -63,6 +63,7 @@ async function fetchGallery(sortType, pageNum = 1) {
         if (!contentType || !contentType.includes("application/json")) {
             throw new Error("Invalid content type received, expected JSON.");
         }
+        // console.log(await response.json())
         return await response.json(); 
     } catch (error) {
         console.error("Fetch error:", error);

@@ -70,9 +70,40 @@
                     <span class="oWHead">Other works</span>
                     <div class="divider"></div>
                 </div>
-                <div class="cont2">
-                    
+
+                <div class="carousel-wrapper">
+                    <button class="otherBtn prevBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+
+                    <div class="cont2">
+                        <div class="workGrid" id="workTemp1">
+                            <div class="workImg1"><img src="" class="thumbnail" alt=""></div>
+                            <div class="workName1"><span class="workTitle1 fileName">[put title here]]</span></div>
+                            <div class="workDesc1">
+                                <b idLan="gallery.work.info.author">Author: </b><span class="author">[insert text here idk]</span><br>
+                                <b idLan="gallery.work.info.dateCreated">Date created: </b><span class="dateCreated">[insert month here idk]</span><span class="yearCreated">[insert year here idk]</span><br>
+                                <b idLan="gallery.work.info.type">Type: </b><span class="type generalType">[insert text here idk]</span>
+                            </div>
+                            <div class="workButton1">
+                                <button class="view"><img src="./img/viewIcon-01.png" alt=""><span idLan="gallery.work.function.view">View work</span></button>
+                                <button class="download"><img src="./img/downloadIcon-01.png" alt=""><span idLan="gallery.work.function.download">Download</span></button>
+                                <button class="copyLink"><img src="./img/linkIcon-01.png" alt=""><span id  Lan="gallery.work.function.link">Link</span></button>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <button class="otherBtn nextBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
                 </div>
+                <div id="fullscreen" class="fullscreen">
+                    <span class="modal-close">&times;</span>
+                    <img id="fullscreen-img" src="" alt="Full Screen Propaganda">
+                    <span id="fullscreen-txt" class="roboto-condensed-bold">Description here</span>
+            </div>
             </section>
         </div>
         <div id="footer"></div>

@@ -41,7 +41,7 @@
 
     "gallery": {
         "date": ["(Untracable)", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        "typeGeneral":["Image", "Video", "Interactive background"],
+        "typeGeneral":["Image", "Video", "Interactive background", "Brand design", "App design", "Web", "Game", "Software"],
         "sort": {
             "aToz": "A to Z",
             "zToa": "Z to A",

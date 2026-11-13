@@ -43,7 +43,7 @@
 
     "gallery": {
         "date": ["(Jäljittämätön)", "Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"],
-        "typeGeneral":["Kuva", "Videot", "Interaktiivinen tausta"],
+        "typeGeneral":["Kuva", "Videot", "Interaktiivinen tausta", "Brändisuunnittelu", "Sovellussuunnittelu", "Verkko", "Peli", "Ohjelmisto"],
         "sort": {
             "aToz": "A:sta Ö:hön",
             "zToa": "Ö:sta A:hön",

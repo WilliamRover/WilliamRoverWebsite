@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Font awesome -->
+        <script src="https://kit.fontawesome.com/ce255f3d20.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>William Rover's website</title>
+        <meta name="description" content="">
+        <link rel="icon" type="image/x-icon" href="../logo wr 5x5-02.png">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+        <link rel="preload" href="./project.css" as="style">
+        <link rel="preload" href="./project.js" as="script">
+        <!-- import CSS -->
+        <link rel="stylesheet" href="./project.css">
+        <!-- import html  -->
+         <!-- <link rel="import" href="./Reuse/Navbar/navbar.html"> -->
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <div class="midpage" id="midpage">
+            <div class="sort">
+                <div class="sort1">
+                    <button id="sortTile"><img src="./img/tileIcon-01.png" alt=""></button>
+                    <button id="sortGrid"><img src="./img/gridIcon.png" alt=""></button>
+                </div>
+                <div class="sort2">
+                    <button id="sortBtnNewest"><span idLan="gallery.sort.newest">Newest first</span></button>
+                    <button id="sortBtnOldest"><span idLan="gallery.sort.oldest">Oldest first</span></button>
+                    <button id="sortBtnAlphabetical"><span idLan="gallery.sort.aToz">A to Z</span></button>
+                    <button id="sortBtnAlphabeticalRev"><span idLan="gallery.sort.zToa">Z to A</span></button>
+                </div>
+            </div>
+
+            <div class="section" id="sectionTemp1">
+                <div class="workGrid" id="workTemp1">
+                    <div class="workImg1"><img src="" class="thumbnail" alt=""></div>
+                    <div class="workName1"><span class="workTitle1 fileName">[put title here]]</span></div>
+                    <div class="workDesc1">
+                        <b idLan="gallery.work.info.author">Author: </b><span class="author">[insert text here idk]</span><br>
+                        <b idLan="gallery.work.info.dateCreated">Date created: </b><span class="dateCreated">[insert month here idk]</span><span class="yearCreated">[insert year here idk]</span><br>
+                        <b idLan="gallery.work.info.type">Type: </b><span class="type generalType">[insert text here idk]</span>
+                    </div>
+                    <div class="workButton1">
+                        <button class="view"><img src="./img/viewIcon-01.png" alt=""><span idLan="gallery.work.function.view">View work</span></button>
+                        <button class="download"><img src="./img/downloadIcon-01.png" alt=""><span idLan="gallery.work.function.download">Download</span></button>
+                        <button class="copyLink"><img src="./img/linkIcon-01.png" alt=""><span idLan="gallery.work.function.link">Link</span></button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="section" id="sectionTemp2">
+                <div class="workTile" id="workTemp2">
+                    <div class="workLBLLeft">
+                        <div class="workImg2">
+                            <img src="" class="thumbnail" alt="">
+                        </div>
+                        <div class="workInfo2">
+                            <div class="workName2"><span class="workTitle2 fileName">bruhbruhbruhbruhbruh hello world i am a tuple</span></div>
+                            <div class="workDesc2">
+                                <b idLan="gallery.work.info.author">Author: </b><span class="author">[insert text here idk]</span><br>
+                                <b idLan="gallery.work.info.dateCreated">Date created: </b><span class="dateCreated">[insert month here idk]</span><span class="yearCreated">[insert year here idk]</span><br>
+                                <b idLan="gallery.work.info.type">Type: </b><span class="type generalType">[insert text here idk]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workLBLRight">
+                        <div class="workButton2">
+                            <button class="view"><img src="./img/viewIcon-01.png" alt=""><span idLan="gallery.work.function.view">View work</span></button>
+                            <button class="download"><img src="./img/downloadIcon-01.png" alt=""><span idLan="gallery.work.function.download">Download</span></button>
+                            <button class="copyLink"><img src="./img/linkIcon-01.png" alt=""><span id  Lan="gallery.work.function.link">Link</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Paging -->
+        <div class="pageContainer" id="pageContainer">
+            <button class="page-btn" id="prev-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Previous
+            </button>
+            <div id="page-numbers" class="page-numbers-container"></div>
+            <button class="page-btn" id="next-btn">
+                Next
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div id="footer"></div>
+        <script src="./project.js" async defer type="module"></script>
+    </body>
+</html>

@@ -101,7 +101,24 @@ export class Sort {
             } else if (config.prefix) {
                 access.innerHTML = `${config.prefix}${res}`;
             } else {
-                access.innerHTML = res;
+                access.innerHTML = Array.isArray(res) ? res.join(", ") : res;
+            }
+
+            const item = this.file[idx];
+            if (item && item.download === false) {
+                const btnSelector = this.#predefinedId === "" 
+                    ? "#download, .download" 
+                    : `${this.#predefinedId}${idx} .download`;
+                    
+                const downloadBtns = document.querySelectorAll(btnSelector);
+                
+                downloadBtns.forEach(btn => {
+                    btn.disabled = true;                // Disables HTML <button> elements
+                    btn.style.pointerEvents = "none";   // Blocks JS click events from firing on <a> or <div> elements
+                    btn.style.opacity = "0.4";          // Fades the button
+                    btn.style.filter = "grayscale(1)";  // Removes color to indicate an inactive state
+                    btn.style.cursor = "not-allowed";   // Updates hover cursor (if pointer-events are bypassed)
+                });
             }
         }
     }
